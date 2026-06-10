@@ -8,6 +8,7 @@ import {
   STAGE_LABELS,
 } from './scoring.js'
 import SnackForm from './SnackForm.jsx'
+import lanternMark from './assets/lantern-mark.png'
 
 const RANK_MEDAL = { 1: '🥇', 2: '🥈', 3: '🥉' }
 
@@ -37,7 +38,7 @@ function App() {
       <header className="masthead">
         <div className="masthead-inner">
           <div className="brand">
-            <span className="brand-mark">🏮</span>
+            <img className="brand-mark" src={lanternMark} alt="" aria-hidden="true" />
             <span className="brand-name">LanternCare</span>
           </div>
           <h1>
@@ -127,7 +128,10 @@ function App() {
       </main>
 
       <footer className="footer">
-        <span>🏮 LanternCare</span>
+        <span className="footer-brand">
+          <img className="footer-mark" src={lanternMark} alt="" aria-hidden="true" />
+          LanternCare
+        </span>
         <span className="dot">•</span>
         <span>Scores from a JSON file — edit and redeploy to update.</span>
       </footer>

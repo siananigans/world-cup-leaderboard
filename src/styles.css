@@ -99,8 +99,12 @@ h3,
 }
 
 .brand-mark {
-  font-size: 1.4rem;
-  filter: drop-shadow(0 0 12px rgba(255, 209, 102, 0.85));
+  height: 1.7rem;
+  width: auto;
+  /* the mark artwork is dark green; brightness(0) invert(1) paints it white
+     so it reads cleanly on the green masthead, with a warm lantern glow */
+  filter: brightness(0) invert(1)
+    drop-shadow(0 0 10px rgba(255, 209, 102, 0.55));
 }
 
 .masthead h1 {
@@ -483,6 +487,18 @@ h3,
   gap: 0.6rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* footer sits on cream, so the mark shows in its natural brand green */
+.footer-mark {
+  height: 1.1rem;
+  width: auto;
 }
 
 .footer .dot {
