@@ -22,7 +22,15 @@ Two things stay manual: **red cards** (not in the dataset — add `homeReds` /
 `awayReds` to a match by hand; the fetch script preserves them) and **snacks**
 (see below).
 
+> Note: API-Football's free tier doesn't cover the 2026 season, which is why we
+> use openfootball. The data is volunteer-maintained, so results can lag from
+> minutes to a few hours behind real life.
+
 ## Editing scores by hand
+
+> The auto-fetch regenerates `matches.json` each run (it preserves any
+> `homeReds`/`awayReds` you add, but other hand-added matches get replaced).
+> Use this if you're not running the scheduled fetch.
 
 You only ever enter **facts** (the actual match scores). Points are computed
 automatically by the rules in `src/scoring.js`.

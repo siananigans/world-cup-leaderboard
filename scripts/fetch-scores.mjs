@@ -4,7 +4,7 @@
 // (free, public domain, no API key) and writes them into src/data/matches.json
 // in the shape our scoring engine expects.
 //
-// Run locally:   node scripts/fetch-scores.mjs
+// Run locally:   node scripts/fetch-scores.mjs   (or: npm run scores)
 // In CI:         see .github/workflows/update-scores.yml (runs on a cron)
 //
 // Notes / judgement calls (easy to change):
