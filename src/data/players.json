@@ -1,16 +1,128 @@
 [
-  { "id": "bryn",     "name": "Bryn",     "teams": ["EGY", "ESP"], "snackDays": 0 },
-  { "id": "marcus",   "name": "Marcus",   "teams": ["NOR", "JPN"], "snackDays": 0 },
-  { "id": "mel",      "name": "Mel",      "teams": ["BEL", "ENG"], "snackDays": 0 },
-  { "id": "sian",     "name": "Sian",     "teams": ["POR", "FRA"], "snackDays": 0 },
-  { "id": "umut",     "name": "Umut",     "teams": ["TUR", "BRA"], "snackDays": 0 },
-  { "id": "kayley",   "name": "Kayley",   "teams": ["GER", "CIV"], "snackDays": 0 },
-  { "id": "calum",    "name": "Calum",    "teams": ["SCO", "PAR"], "snackDays": 0 },
-  { "id": "niloufar", "name": "Niloufar", "teams": ["IRN", "CZE"], "snackDays": 0 },
-  { "id": "som",      "name": "Som",      "teams": ["ALG", "CAN"], "snackDays": 0 },
-  { "id": "sharjeel", "name": "Sharjeel", "teams": ["COL", "NED"], "snackDays": 0 },
-  { "id": "siri",     "name": "Siri",     "teams": ["NZL", "SUI"], "snackDays": 0 },
-  { "id": "sri",      "name": "Sri",      "teams": ["AUT", "CRO"], "snackDays": 0 },
-  { "id": "akash",    "name": "Akash",    "teams": ["MAR", "UZB"], "snackDays": 0 },
-  { "id": "kaiden",   "name": "Kaiden",   "teams": ["ARG", "HAI"], "snackDays": 0 }
+  {
+    "id": "bryn",
+    "name": "Bryn",
+    "teams": [
+      "EGY",
+      "ESP"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "marcus",
+    "name": "Marcus",
+    "teams": [
+      "NOR",
+      "JPN"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "mel",
+    "name": "Mel",
+    "teams": [
+      "BEL",
+      "ENG"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "sian",
+    "name": "Sian",
+    "teams": [
+      "POR",
+      "FRA"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "umut",
+    "name": "Umut",
+    "teams": [
+      "TUR",
+      "BRA"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "kayley",
+    "name": "Kayley",
+    "teams": [
+      "GER",
+      "CIV"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "calum",
+    "name": "Calum",
+    "teams": [
+      "SCO",
+      "PAR"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "niloufar",
+    "name": "Niloufar",
+    "teams": [
+      "IRN",
+      "CZE"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "som",
+    "name": "Som",
+    "teams": [
+      "ALG",
+      "CAN"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "sharjeel",
+    "name": "Sharjeel",
+    "teams": [
+      "COL",
+      "NED"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "siri",
+    "name": "Siri",
+    "teams": [
+      "NZL",
+      "SUI"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "sri",
+    "name": "Sri",
+    "teams": [
+      "AUT",
+      "CRO"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "akash",
+    "name": "Akash",
+    "teams": [
+      "MAR",
+      "UZB"
+    ],
+    "snackDays": 0
+  },
+  {
+    "id": "kaiden",
+    "name": "Kaiden",
+    "teams": [
+      "ARG",
+      "HAI"
+    ],
+    "snackDays": 0
+  }
 ]
