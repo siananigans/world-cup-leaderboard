@@ -390,6 +390,18 @@ h3,
   color: var(--green);
 }
 
+.fx-day-group + .fx-day-group {
+  margin-top: 1.1rem;
+}
+
+.fx-date {
+  margin: 0 0 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
 .fixture-list {
   list-style: none;
   margin: 0;
@@ -400,7 +412,7 @@ h3,
 
 .fixture {
   display: grid;
-  grid-template-columns: 5.5rem 1fr;
+  grid-template-columns: 4.5rem 1fr;
   align-items: center;
   gap: 0.9rem;
   padding: 0.6rem 0.9rem;
@@ -409,21 +421,10 @@ h3,
   border-radius: 12px;
 }
 
-.fx-when {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-
-.fx-day {
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--ink);
-}
-
 .fx-time {
-  font-size: 0.8rem;
-  color: var(--ink-faint);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
 }
 
 /* The matchup takes the full remaining width, so the central "v" lands at the

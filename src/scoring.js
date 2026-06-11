@@ -1,8 +1,8 @@
 // ---------------------------------------------------------------------------
 // Scoring rules — edit these numbers to change how the leaderboard is decided.
 //
-// Match outcomes, stage bonuses and red cards are computed per team from
-// matches.json. The snack bonus is per player and comes from players.json.
+// Match outcomes and stage bonuses are computed per team from matches.json.
+// The snack bonus is per player and comes from players.json.
 // Stage bonuses are CUMULATIVE: a team that reaches the semis banks the group,
 // quarter and semi bonuses.
 // ---------------------------------------------------------------------------
@@ -13,7 +13,6 @@ export const SCORING = {
   quarterFinal: 10,     // reaches the quarter-finals
   semiFinal: 10,        // reaches the semi-finals
   champion: 15,         // World Cup winners 🎉
-  redCard: -2,          // per red card shown to the country
   snackDay: 7,          // per day a player brings in snacks 🍪
 }
 
@@ -38,7 +37,6 @@ export function scoreTeam(teamCode, matches) {
   let losses = 0
   let goalsFor = 0
   let goalsAgainst = 0
-  let redCards = 0
   let furthestStageIndex = -1
   let isChampion = false
 
@@ -49,12 +47,10 @@ export function scoreTeam(teamCode, matches) {
 
     const gf = isHome ? m.homeGoals : m.awayGoals
     const ga = isHome ? m.awayGoals : m.homeGoals
-    const reds = (isHome ? m.homeReds : m.awayReds) ?? 0
 
     played += 1
     goalsFor += gf
     goalsAgainst += ga
-    redCards += reds
 
     if (gf > ga) wins += 1
     else if (gf === ga) draws += 1
@@ -75,7 +71,6 @@ export function scoreTeam(teamCode, matches) {
     fromQuarter: reached('quarter') ? SCORING.quarterFinal : 0,
     fromSemi: reached('semi') ? SCORING.semiFinal : 0,
     fromChampion: isChampion ? SCORING.champion : 0,
-    fromRedCards: redCards * SCORING.redCard,
   }
 
   const points = Object.values(breakdown).reduce((a, b) => a + b, 0)
@@ -88,7 +83,6 @@ export function scoreTeam(teamCode, matches) {
     losses,
     goalsFor,
     goalsAgainst,
-    redCards,
     furthestStage,
     isChampion,
     breakdown,

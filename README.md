@@ -18,9 +18,7 @@ redeploys. Run it on demand from the **Actions** tab, or locally:
 npm run scores
 ```
 
-Two things stay manual: **red cards** (not in the dataset — add `homeReds` /
-`awayReds` to a match by hand; the fetch script preserves them) and **snacks**
-(see below).
+One thing stays manual: **snacks** (see below).
 
 > Note: API-Football's free tier doesn't cover the 2026 season, which is why we
 > use openfootball. The data is volunteer-maintained, so results can lag from
@@ -28,9 +26,8 @@ Two things stay manual: **red cards** (not in the dataset — add `homeReds` /
 
 ## Editing scores by hand
 
-> The auto-fetch regenerates `matches.json` each run (it preserves any
-> `homeReds`/`awayReds` you add, but other hand-added matches get replaced).
-> Use this if you're not running the scheduled fetch.
+> The auto-fetch regenerates `matches.json` each run, so hand-added matches get
+> replaced. Use this if you're not running the scheduled fetch.
 
 You only ever enter **facts** (the actual match scores). Points are computed
 automatically by the rules in `src/scoring.js`.
@@ -38,12 +35,11 @@ automatically by the rules in `src/scoring.js`.
 Add each match to `src/data/matches.json`:
 
 ```json
-{ "stage": "group", "home": "ENG", "away": "FRA", "homeGoals": 2, "awayGoals": 1, "homeReds": 0, "awayReds": 1 }
+{ "stage": "group", "home": "ENG", "away": "FRA", "homeGoals": 2, "awayGoals": 1 }
 ```
 
 - `stage` is one of: `group`, `round16`, `quarter`, `semi`, `final`.
 - `home` / `away` are team codes from `src/data/teams.json`.
-- `homeReds` / `awayReds` are optional red-card counts (default 0).
 - Stage and champion bonuses are derived automatically: a team that appears in
   a `round16` match advanced from the group, one in a `quarter` match reached
   the quarters, and the team that wins a `final` match is champion.
@@ -94,7 +90,6 @@ Edit the `SCORING` object in `src/scoring.js`. Current rules:
 | Reach quarter-finals        | +10    |
 | Reach semi-finals           | +10    |
 | World Cup winners 🎉        | +15    |
-| Red card                    | −2     |
 | Snack day (per player) 🍪   | +7     |
 
 Stage bonuses are **cumulative** (a team reaching the semis banks group +

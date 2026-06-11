@@ -13,7 +13,9 @@ import lanternMark from './assets/lantern-mark.png'
 
 const RANK_MEDAL = { 1: '🥇', 2: '🥈', 3: '🥉' }
 
-const FIXTURES_TO_SHOW = 5
+// How many match days (days on which one of our teams plays) to list. Counts
+// days with games, not calendar days, so gaps between rounds don't shrink it.
+const FIXTURE_DAYS = 3
 
 // Code -> team record, so fixtures can show a flag + name for tracked teams.
 // Untracked opponents are stored as their raw name and fall back gracefully.
@@ -33,12 +35,12 @@ const TIME_FMT = new Intl.DateTimeFormat(undefined, {
   minute: '2-digit',
 })
 
-// Order fixtures by kickoff (falling back to midday on the date), keeping only
-// games that haven't started, and take the next few. Done at render time so a
-// statically-built page still shows the right games for today's viewer.
-function upcomingFixtures() {
+// Upcoming fixtures grouped by their local match day, limited to the next few
+// days that have games. Done at render time (against the viewer's clock and
+// timezone) so a statically-built page always shows the right days.
+function upcomingByDay(maxDays) {
   const now = Date.now()
-  return fixtures
+  const upcoming = fixtures
     .map((f) => ({
       ...f,
       ts: f.kickoff
@@ -49,7 +51,23 @@ function upcomingFixtures() {
     }))
     .filter((f) => Number.isFinite(f.ts) && f.ts >= now)
     .sort((a, b) => a.ts - b.ts)
-    .slice(0, FIXTURES_TO_SHOW)
+
+  // Group by local calendar day so the date header matches the times shown.
+  const groups = []
+  const byKey = new Map()
+  for (const f of upcoming) {
+    const d = new Date(f.ts)
+    const key = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`
+    let group = byKey.get(key)
+    if (!group) {
+      if (groups.length >= maxDays) break // we have enough days; stop
+      group = { key, label: DAY_FMT.format(d), games: [] }
+      byKey.set(key, group)
+      groups.push(group)
+    }
+    group.games.push(f)
+  }
+  return groups
 }
 
 function TeamChip({ teamScore }) {
@@ -223,11 +241,6 @@ function TeamBreakdown({ teamScore }) {
             {statLine('Quarter-finals', '', b.fromQuarter)}
             {statLine('Semi-finals', '', b.fromSemi)}
             {statLine('Champions 🏆', '', b.fromChampion)}
-            {statLine(
-              'Red cards',
-              `${t.redCards} × ${SCORING.redCard}`,
-              b.fromRedCards,
-            )}
           </ul>
         </>
       )}
@@ -246,38 +259,41 @@ function FixtureTeam({ codeOrName, align }) {
 }
 
 function Fixtures() {
-  const games = useMemo(upcomingFixtures, [])
+  const days = useMemo(() => upcomingByDay(FIXTURE_DAYS), [])
 
-  if (games.length === 0) return null
+  if (days.length === 0) return null
 
   return (
     <section className="fixtures" aria-label="Upcoming fixtures">
-      <h2>📅 Next {games.length === 1 ? 'game' : `${games.length} games`}</h2>
-      <ol className="fixture-list">
-        {games.map((f, i) => {
-          const when = f.kickoff ? new Date(f.kickoff) : null
-          return (
-            <li className="fixture" key={`${f.date}-${f.home}-${f.away}-${i}`}>
-              <span className="fx-when">
-                <span className="fx-day">
-                  {when ? DAY_FMT.format(when) : f.date || 'TBC'}
-                </span>
-                <span className="fx-time">
-                  {when ? TIME_FMT.format(when) : 'TBC'}
-                </span>
-              </span>
-              <span className="fx-body">
-                <span className="fx-match">
-                  <FixtureTeam codeOrName={f.home} align="home" />
-                  <span className="fx-v">v</span>
-                  <FixtureTeam codeOrName={f.away} align="away" />
-                </span>
-                {f.ground && <span className="fx-ground">{f.ground}</span>}
-              </span>
-            </li>
-          )
-        })}
-      </ol>
+      <h2>📅 Upcoming</h2>
+      {days.map((day) => (
+        <div className="fx-day-group" key={day.key}>
+          <h3 className="fx-date">{day.label}</h3>
+          <ol className="fixture-list">
+            {day.games.map((f, i) => {
+              const when = f.kickoff ? new Date(f.kickoff) : null
+              return (
+                <li
+                  className="fixture"
+                  key={`${f.date}-${f.home}-${f.away}-${i}`}
+                >
+                  <span className="fx-time">
+                    {when ? TIME_FMT.format(when) : 'TBC'}
+                  </span>
+                  <span className="fx-body">
+                    <span className="fx-match">
+                      <FixtureTeam codeOrName={f.home} align="home" />
+                      <span className="fx-v">v</span>
+                      <FixtureTeam codeOrName={f.away} align="away" />
+                    </span>
+                    {f.ground && <span className="fx-ground">{f.ground}</span>}
+                  </span>
+                </li>
+              )
+            })}
+          </ol>
+        </div>
+      ))}
     </section>
   )
 }
@@ -310,10 +326,6 @@ function ScoringLegend() {
         <li>
           <span className="legend-pts pos">+{SCORING.champion}</span> World Cup
           winners 🎉
-        </li>
-        <li>
-          <span className="legend-pts neg">{SCORING.redCard}</span> for any red
-          cards
         </li>
         <li>
           <span className="legend-pts pos">+{SCORING.snackDay}</span> bonus for

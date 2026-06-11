@@ -16,11 +16,11 @@
 //    present, otherwise full-time.
 //  - The third-place play-off is tagged "semi" so its win/goal points count
 //    without granting an extra stage bonus.
-//  - Red cards are NOT in this dataset, so any homeReds/awayReds you have
-//    entered by hand in matches.json are PRESERVED across runs.
-//  - Both files keep only matches involving at least one tracked team.
+//  - matches.json keeps only games involving a tracked team (scoring only
+//    cares about those); fixtures.json lists the whole schedule, minus
+//    knockout games whose teams aren't decided yet.
 // ---------------------------------------------------------------------------
-import { readFileSync, writeFileSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 
@@ -87,6 +87,13 @@ function resolve(name) {
   return NAME_TO_CODE[normalise(name)] || name
 }
 
+// Knockout fixtures whose teams aren't decided yet use placeholders like
+// "1A", "2B", "3A/B/C/D/F", "W73" or "L101". We skip those until the real
+// nations are filled in by the data source.
+function isPlaceholder(name) {
+  return /^\d/.test(name) || /^[WL]\d/.test(name) || name.includes('/')
+}
+
 function stageFromRound(round) {
   const r = round.toLowerCase()
   if (r.startsWith('matchday')) return 'group'
@@ -130,39 +137,22 @@ async function main() {
   }
   const data = await res.json()
 
-  // Preserve manually-entered red cards, keyed by stage|home|away.
-  let existing = []
-  try {
-    existing = JSON.parse(readFileSync(MATCHES_PATH, 'utf8'))
-  } catch {
-    existing = []
-  }
-  const redsByKey = {}
-  for (const m of existing) {
-    if (m.homeReds || m.awayReds) {
-      redsByKey[`${m.stage}|${m.home}|${m.away}`] = {
-        homeReds: m.homeReds ?? 0,
-        awayReds: m.awayReds ?? 0,
-      }
-    }
-  }
-
   const out = []
   const fixtures = []
   let skipped = 0
   for (const m of data.matches || []) {
     const home = resolve(m.team1)
     const away = resolve(m.team2)
-    // Only keep matches involving at least one of our players' teams.
-    if (!TRACKED.has(home) && !TRACKED.has(away)) {
-      skipped++
-      continue
-    }
-
     const stage = stageFromRound(m.round)
 
     if (!m.score || !m.score.ft) {
-      // Not played yet — record it as an upcoming fixture.
+      // Not played yet — list it as a fixture. We show the whole World Cup
+      // schedule, not just our teams, but skip knockout games whose teams
+      // aren't known yet (placeholders like "1A" / "W73").
+      if (isPlaceholder(m.team1) || isPlaceholder(m.team2)) {
+        skipped++
+        continue
+      }
       fixtures.push({
         stage,
         home,
@@ -176,10 +166,15 @@ async function main() {
       continue
     }
 
+    // Played match — only our players' teams affect scoring, so matches.json
+    // stays teams-only.
+    if (!TRACKED.has(home) && !TRACKED.has(away)) {
+      skipped++
+      continue
+    }
+
     // Prefer the after-extra-time score if the match went that far.
     const decisive = m.score.et || m.score.ft
-    const key = `${stage}|${home}|${away}`
-    const reds = redsByKey[key] || { homeReds: 0, awayReds: 0 }
 
     out.push({
       stage,
@@ -187,8 +182,6 @@ async function main() {
       away,
       homeGoals: decisive[0],
       awayGoals: decisive[1],
-      homeReds: reds.homeReds,
-      awayReds: reds.awayReds,
     })
   }
 
@@ -199,7 +192,7 @@ async function main() {
   console.log(
     `Wrote ${out.length} played match(es) to matches.json and ` +
       `${fixtures.length} upcoming fixture(s) to fixtures.json ` +
-      `(skipped ${skipped} not involving our teams).`,
+      `(skipped ${skipped}: untracked results + undecided knockout games).`,
   )
 }
 
