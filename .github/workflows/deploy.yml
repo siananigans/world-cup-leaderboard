@@ -25,6 +25,11 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # Pull the latest scores & fixtures at deploy time so every deploy ships
+      # fresh data, not just whatever was last committed. Best-effort: a flaky
+      # data source must not block deploying a code change.
+      - name: Refresh scores & fixtures
+        run: node scripts/fetch-scores.mjs || echo "Score fetch failed; building with committed data."
       - run: npm run build
         env:
           VITE_SNACK_FORM_URL: ${{ vars.VITE_SNACK_FORM_URL }}

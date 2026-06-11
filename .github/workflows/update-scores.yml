@@ -5,7 +5,11 @@ name: Update scores
 # needed. Runs on a schedule and can be triggered by hand.
 on:
   schedule:
-    - cron: '*/30 * * * *' # every 30 minutes
+    # GitHub runs cron on a best-effort basis and throttles hardest at the top
+    # of the hour, so we avoid :00/:30 and schedule several off-peak minutes to
+    # raise the chance a run actually fires. Realised cadence is still up to
+    # GitHub; use the "Run workflow" button for an immediate update.
+    - cron: '7,22,37,52 * * * *' # ~every 15 min, off the busy minutes
   workflow_dispatch:
 
 permissions:
