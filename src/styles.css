@@ -463,12 +463,52 @@ h3,
   justify-content: flex-start;
 }
 
+.fx-team-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.fx-team.home .fx-team-col {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.fx-team.away .fx-team-col {
+  align-items: flex-start;
+  text-align: left;
+}
+
 .fx-team-name {
   font-weight: 600;
   font-size: 0.95rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Badge marking which player drew this team in the sweepstake. */
+.fx-owner {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--coral-2);
+  background: #fff1ec;
+  border: 1px solid #ffd9cd;
+  border-radius: 999px;
+  padding: 0.02rem 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fx-team.home .fx-owner {
+  align-self: flex-end;
 }
 
 .fx-v {
