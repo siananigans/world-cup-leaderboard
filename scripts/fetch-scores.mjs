@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 // ---------------------------------------------------------------------------
-// Pulls played World Cup matches from the openfootball/worldcup.json dataset
-// (free, public domain, no API key) and writes them into src/data/matches.json
-// in the shape our scoring engine expects.
+// Pulls World Cup matches from the openfootball/worldcup.json dataset (free,
+// public domain, no API key). Played matches go to src/data/matches.json in
+// the shape our scoring engine expects; upcoming matches go to
+// src/data/fixtures.json so the site can show the next few games.
 //
 // Run locally:   node scripts/fetch-scores.mjs   (or: npm run scores)
 // In CI:         see .github/workflows/update-scores.yml (runs on a cron)
 //
 // Notes / judgement calls (easy to change):
-//  - Only matches that have actually been played (have a score) are written.
+//  - A match is "played" once it has a score; otherwise it's a fixture.
 //  - Knockout games decided on penalties count as a DRAW for match points
 //    (FIFA's official record); the winner still banks the stage bonus because
 //    they appear in the next round's fixtures. We use extra-time score if
@@ -17,6 +18,7 @@
 //    without granting an extra stage bonus.
 //  - Red cards are NOT in this dataset, so any homeReds/awayReds you have
 //    entered by hand in matches.json are PRESERVED across runs.
+//  - Both files keep only matches involving at least one tracked team.
 // ---------------------------------------------------------------------------
 import { readFileSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
@@ -24,6 +26,7 @@ import { dirname, join } from 'node:path'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const MATCHES_PATH = join(__dirname, '..', 'src', 'data', 'matches.json')
+const FIXTURES_PATH = join(__dirname, '..', 'src', 'data', 'fixtures.json')
 
 const SOURCE_URL =
   process.env.WORLDCUP_JSON_URL ||
@@ -95,6 +98,31 @@ function stageFromRound(round) {
   return 'group'
 }
 
+// Turn openfootball's date ("2026-06-11") + time ("13:00 UTC-6") into an ISO
+// instant in UTC, so the browser can render it in each viewer's local zone.
+// Returns null when the time is missing or unparseable (date-only fixtures).
+function parseKickoff(date, time) {
+  if (!date || !time) return null
+  const m = time.match(/(\d{1,2}):(\d{2})\s*UTC([+-]\d{1,2})(?::?(\d{2}))?/i)
+  if (!m) return null
+  const [, hh, mm, offH, offM] = m
+  const [y, mo, d] = date.split('-').map(Number)
+  const offHours = Number(offH)
+  const offMins = (offHours < 0 ? -1 : 1) * Number(offM || 0)
+  // A clock reading hh:mm at UTC(offset) is (hh - offset) in UTC; Date.UTC
+  // normalises any hour/minute overflow across day boundaries for us.
+  const utcMs = Date.UTC(y, mo - 1, d, Number(hh) - offHours, Number(mm) - offMins)
+  return new Date(utcMs).toISOString()
+}
+
+// Sortable timestamp for ordering fixtures; falls back to midday on the date
+// when no kickoff time is known, and to the far future when neither exists.
+function fixtureSortKey(f) {
+  if (f.kickoff) return Date.parse(f.kickoff)
+  if (f.date) return Date.parse(`${f.date}T12:00:00Z`)
+  return Infinity
+}
+
 async function main() {
   const res = await fetch(SOURCE_URL)
   if (!res.ok) {
@@ -120,10 +148,9 @@ async function main() {
   }
 
   const out = []
+  const fixtures = []
   let skipped = 0
   for (const m of data.matches || []) {
-    if (!m.score || !m.score.ft) continue // not played yet
-
     const home = resolve(m.team1)
     const away = resolve(m.team2)
     // Only keep matches involving at least one of our players' teams.
@@ -132,9 +159,25 @@ async function main() {
       continue
     }
 
+    const stage = stageFromRound(m.round)
+
+    if (!m.score || !m.score.ft) {
+      // Not played yet — record it as an upcoming fixture.
+      fixtures.push({
+        stage,
+        home,
+        away,
+        date: m.date || null,
+        time: m.time || null,
+        kickoff: parseKickoff(m.date, m.time),
+        ground: m.ground || null,
+        group: m.group || null,
+      })
+      continue
+    }
+
     // Prefer the after-extra-time score if the match went that far.
     const decisive = m.score.et || m.score.ft
-    const stage = stageFromRound(m.round)
     const key = `${stage}|${home}|${away}`
     const reds = redsByKey[key] || { homeReds: 0, awayReds: 0 }
 
@@ -149,9 +192,14 @@ async function main() {
     })
   }
 
+  fixtures.sort((a, b) => fixtureSortKey(a) - fixtureSortKey(b))
+
   writeFileSync(MATCHES_PATH, JSON.stringify(out, null, 2) + '\n')
+  writeFileSync(FIXTURES_PATH, JSON.stringify(fixtures, null, 2) + '\n')
   console.log(
-    `Wrote ${out.length} played match(es) to matches.json (skipped ${skipped} not involving our teams).`,
+    `Wrote ${out.length} played match(es) to matches.json and ` +
+      `${fixtures.length} upcoming fixture(s) to fixtures.json ` +
+      `(skipped ${skipped} not involving our teams).`,
   )
 }
 

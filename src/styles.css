@@ -374,6 +374,115 @@ h3,
   font-weight: 700;
 }
 
+/* ---------------- Fixtures ---------------- */
+.fixtures {
+  margin-top: 1.6rem;
+  background: #fff;
+  border: 1px solid var(--cream-4);
+  border-radius: 16px;
+  padding: 1.2rem 1.3rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.fixtures h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.2rem;
+  color: var(--green);
+}
+
+.fixture-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.fixture {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--cream-2);
+  border: 1px solid var(--cream-4);
+  border-radius: 12px;
+}
+
+.fx-when {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.fx-day {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+
+.fx-time {
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+/* The matchup takes the full remaining width, so the central "v" lands at the
+   same x on every row; the venue sits centred beneath it. */
+.fx-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.fx-match {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.fx-team {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+/* Home team mirrors the away side so both flags hug the central "v".
+   row-reverse flips the main axis, so flex-start packs content to the right. */
+.fx-team.home {
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+
+.fx-team.away {
+  justify-content: flex-start;
+}
+
+.fx-team-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fx-v {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+}
+
+.fx-ground {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  text-align: center;
+}
+
 /* ---------------- Snack form ---------------- */
 .snack-form {
   margin-top: 1.6rem;
@@ -537,5 +646,12 @@ h3,
   }
   .row-detail {
     grid-template-columns: 1fr;
+  }
+  .fixture {
+    grid-template-columns: 4.2rem 1fr;
+    gap: 0.6rem;
+  }
+  .fx-team-name {
+    font-size: 0.9rem;
   }
 }

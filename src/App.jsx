@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react'
 import players from './data/players.json'
 import teams from './data/teams.json'
 import matches from './data/matches.json'
+import fixtures from './data/fixtures.json'
 import {
   buildLeaderboard,
   SCORING,
@@ -11,6 +12,45 @@ import SnackForm from './SnackForm.jsx'
 import lanternMark from './assets/lantern-mark.png'
 
 const RANK_MEDAL = { 1: '🥇', 2: '🥈', 3: '🥉' }
+
+const FIXTURES_TO_SHOW = 5
+
+// Code -> team record, so fixtures can show a flag + name for tracked teams.
+// Untracked opponents are stored as their raw name and fall back gracefully.
+const TEAM_BY_CODE = Object.fromEntries(teams.map((t) => [t.code, t]))
+
+function lookupTeam(codeOrName) {
+  return TEAM_BY_CODE[codeOrName] || { code: codeOrName, name: codeOrName, flag: '🏳️' }
+}
+
+const DAY_FMT = new Intl.DateTimeFormat(undefined, {
+  weekday: 'short',
+  day: 'numeric',
+  month: 'short',
+})
+const TIME_FMT = new Intl.DateTimeFormat(undefined, {
+  hour: '2-digit',
+  minute: '2-digit',
+})
+
+// Order fixtures by kickoff (falling back to midday on the date), keeping only
+// games that haven't started, and take the next few. Done at render time so a
+// statically-built page still shows the right games for today's viewer.
+function upcomingFixtures() {
+  const now = Date.now()
+  return fixtures
+    .map((f) => ({
+      ...f,
+      ts: f.kickoff
+        ? Date.parse(f.kickoff)
+        : f.date
+          ? Date.parse(`${f.date}T12:00:00Z`)
+          : Infinity,
+    }))
+    .filter((f) => Number.isFinite(f.ts) && f.ts >= now)
+    .sort((a, b) => a.ts - b.ts)
+    .slice(0, FIXTURES_TO_SHOW)
+}
 
 function TeamChip({ teamScore }) {
   const { team, points, played } = teamScore
@@ -122,6 +162,8 @@ function App() {
           })}
         </section>
 
+        <Fixtures />
+
         <SnackForm />
 
         <ScoringLegend />
@@ -190,6 +232,53 @@ function TeamBreakdown({ teamScore }) {
         </>
       )}
     </div>
+  )
+}
+
+function FixtureTeam({ codeOrName, align }) {
+  const team = lookupTeam(codeOrName)
+  return (
+    <span className={`fx-team ${align}`}>
+      <span className="team-flag">{team.flag}</span>
+      <span className="fx-team-name">{team.name}</span>
+    </span>
+  )
+}
+
+function Fixtures() {
+  const games = useMemo(upcomingFixtures, [])
+
+  if (games.length === 0) return null
+
+  return (
+    <section className="fixtures" aria-label="Upcoming fixtures">
+      <h2>📅 Next {games.length === 1 ? 'game' : `${games.length} games`}</h2>
+      <ol className="fixture-list">
+        {games.map((f, i) => {
+          const when = f.kickoff ? new Date(f.kickoff) : null
+          return (
+            <li className="fixture" key={`${f.date}-${f.home}-${f.away}-${i}`}>
+              <span className="fx-when">
+                <span className="fx-day">
+                  {when ? DAY_FMT.format(when) : f.date || 'TBC'}
+                </span>
+                <span className="fx-time">
+                  {when ? TIME_FMT.format(when) : 'TBC'}
+                </span>
+              </span>
+              <span className="fx-body">
+                <span className="fx-match">
+                  <FixtureTeam codeOrName={f.home} align="home" />
+                  <span className="fx-v">v</span>
+                  <FixtureTeam codeOrName={f.away} align="away" />
+                </span>
+                {f.ground && <span className="fx-ground">{f.ground}</span>}
+              </span>
+            </li>
+          )
+        })}
+      </ol>
+    </section>
   )
 }
 
