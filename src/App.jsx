@@ -21,6 +21,12 @@ const FIXTURE_DAYS = 3
 // Untracked opponents are stored as their raw name and fall back gracefully.
 const TEAM_BY_CODE = Object.fromEntries(teams.map((t) => [t.code, t]))
 
+// Team code -> the player who drew it, so fixtures can flag whose team is
+// playing. Untracked opponents have no owner and simply show nothing.
+const OWNER_BY_CODE = Object.fromEntries(
+  players.flatMap((p) => p.teams.map((code) => [code, p.name])),
+)
+
 function lookupTeam(codeOrName) {
   return TEAM_BY_CODE[codeOrName] || { code: codeOrName, name: codeOrName, flag: '🏳️' }
 }
@@ -250,10 +256,18 @@ function TeamBreakdown({ teamScore }) {
 
 function FixtureTeam({ codeOrName, align }) {
   const team = lookupTeam(codeOrName)
+  const owner = OWNER_BY_CODE[codeOrName]
   return (
     <span className={`fx-team ${align}`}>
       <span className="team-flag">{team.flag}</span>
-      <span className="fx-team-name">{team.name}</span>
+      <span className="fx-team-col">
+        <span className="fx-team-name">{team.name}</span>
+        {owner && (
+          <span className="fx-owner" title={`${team.name} belongs to ${owner}`}>
+            {owner}
+          </span>
+        )}
+      </span>
     </span>
   )
 }
