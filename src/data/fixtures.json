@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "USA",
-    "away": "PAR",
-    "date": "2026-06-12",
-    "time": "18:00 UTC-7",
-    "kickoff": "2026-06-13T01:00:00.000Z",
-    "ground": "Los Angeles (Inglewood)",
-    "group": "Group D"
-  },
-  {
-    "stage": "group",
     "home": "Qatar",
     "away": "SUI",
     "date": "2026-06-13",

@@ -12,5 +12,12 @@
     "away": "Bosnia & Herzegovina",
     "homeGoals": 1,
     "awayGoals": 1
+  },
+  {
+    "stage": "group",
+    "home": "USA",
+    "away": "PAR",
+    "homeGoals": 4,
+    "awayGoals": 1
   }
 ]
