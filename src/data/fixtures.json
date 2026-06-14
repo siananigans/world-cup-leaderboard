@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "GER",
-    "away": "Curaçao",
-    "date": "2026-06-14",
-    "time": "12:00 UTC-5",
-    "kickoff": "2026-06-14T17:00:00.000Z",
-    "ground": "Houston",
-    "group": "Group E"
-  },
-  {
-    "stage": "group",
     "home": "NED",
     "away": "JPN",
     "date": "2026-06-14",

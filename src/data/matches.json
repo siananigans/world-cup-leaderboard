@@ -47,5 +47,12 @@
     "away": "TUR",
     "homeGoals": 2,
     "awayGoals": 0
+  },
+  {
+    "stage": "group",
+    "home": "GER",
+    "away": "Curaçao",
+    "homeGoals": 7,
+    "awayGoals": 1
   }
 ]
