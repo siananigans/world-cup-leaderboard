@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "Australia",
-    "away": "TUR",
-    "date": "2026-06-13",
-    "time": "21:00 UTC-7",
-    "kickoff": "2026-06-14T04:00:00.000Z",
-    "ground": "Vancouver",
-    "group": "Group D"
-  },
-  {
-    "stage": "group",
     "home": "GER",
     "away": "Curaçao",
     "date": "2026-06-14",

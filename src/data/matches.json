@@ -40,5 +40,12 @@
     "away": "PAR",
     "homeGoals": 4,
     "awayGoals": 1
+  },
+  {
+    "stage": "group",
+    "home": "Australia",
+    "away": "TUR",
+    "homeGoals": 2,
+    "awayGoals": 0
   }
 ]
