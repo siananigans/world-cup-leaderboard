@@ -68,5 +68,12 @@
     "away": "JPN",
     "homeGoals": 2,
     "awayGoals": 2
+  },
+  {
+    "stage": "group",
+    "home": "ESP",
+    "away": "Cape Verde",
+    "homeGoals": 0,
+    "awayGoals": 0
   }
 ]
