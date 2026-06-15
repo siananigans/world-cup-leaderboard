@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "BEL",
-    "away": "EGY",
-    "date": "2026-06-15",
-    "time": "12:00 UTC-7",
-    "kickoff": "2026-06-15T19:00:00.000Z",
-    "ground": "Seattle",
-    "group": "Group G"
-  },
-  {
-    "stage": "group",
     "home": "Saudi Arabia",
     "away": "Uruguay",
     "date": "2026-06-15",
@@ -142,7 +132,7 @@
   {
     "stage": "group",
     "home": "Mexico",
-    "away": "South Korea",
+    "away": "KOR",
     "date": "2026-06-18",
     "time": "19:00 UTC-6",
     "kickoff": "2026-06-19T01:00:00.000Z",
@@ -192,7 +182,7 @@
   {
     "stage": "group",
     "home": "NED",
-    "away": "Sweden",
+    "away": "SWE",
     "date": "2026-06-20",
     "time": "12:00 UTC-5",
     "kickoff": "2026-06-20T17:00:00.000Z",
@@ -402,7 +392,7 @@
   {
     "stage": "group",
     "home": "South Africa",
-    "away": "South Korea",
+    "away": "KOR",
     "date": "2026-06-24",
     "time": "19:00 UTC-6",
     "kickoff": "2026-06-25T01:00:00.000Z",
@@ -432,7 +422,7 @@
   {
     "stage": "group",
     "home": "JPN",
-    "away": "Sweden",
+    "away": "SWE",
     "date": "2026-06-25",
     "time": "18:00 UTC-5",
     "kickoff": "2026-06-25T23:00:00.000Z",

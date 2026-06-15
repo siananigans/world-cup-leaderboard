@@ -68,6 +68,8 @@ const NAME_TO_CODE = {
   uzbekistan: 'UZB',
   argentina: 'ARG',
   haiti: 'HAI',
+  southkorea: 'KOR',
+  sweden: 'SWE',
 }
 
 const TRACKED = new Set(Object.values(NAME_TO_CODE))

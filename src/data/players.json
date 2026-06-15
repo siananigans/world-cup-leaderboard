@@ -124,5 +124,14 @@
       "HAI"
     ],
     "snackDays": 0
+  },
+  {
+    "id": "murtaza",
+    "name": "Murtaza",
+    "teams": [
+      "KOR",
+      "SWE"
+    ],
+    "snackDays": 0
   }
 ]

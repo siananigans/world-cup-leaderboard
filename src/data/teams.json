@@ -26,5 +26,7 @@
   { "code": "MAR", "name": "Morocco", "flag": "🇲🇦" },
   { "code": "UZB", "name": "Uzbekistan", "flag": "🇺🇿" },
   { "code": "ARG", "name": "Argentina", "flag": "🇦🇷" },
-  { "code": "HAI", "name": "Haiti", "flag": "🇭🇹" }
+  { "code": "HAI", "name": "Haiti", "flag": "🇭🇹" },
+  { "code": "KOR", "name": "South Korea", "flag": "🇰🇷" },
+  { "code": "SWE", "name": "Sweden", "flag": "🇸🇪" }
 ]

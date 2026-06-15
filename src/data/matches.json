@@ -1,7 +1,7 @@
 [
   {
     "stage": "group",
-    "home": "South Korea",
+    "home": "KOR",
     "away": "CZE",
     "homeGoals": 2,
     "awayGoals": 1
@@ -68,6 +68,20 @@
     "away": "JPN",
     "homeGoals": 2,
     "awayGoals": 2
+  },
+  {
+    "stage": "group",
+    "home": "SWE",
+    "away": "Tunisia",
+    "homeGoals": 5,
+    "awayGoals": 1
+  },
+  {
+    "stage": "group",
+    "home": "BEL",
+    "away": "EGY",
+    "homeGoals": 1,
+    "awayGoals": 1
   },
   {
     "stage": "group",
