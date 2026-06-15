@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "CIV",
-    "away": "Ecuador",
-    "date": "2026-06-14",
-    "time": "19:00 UTC-4",
-    "kickoff": "2026-06-14T23:00:00.000Z",
-    "ground": "Philadelphia",
-    "group": "Group E"
-  },
-  {
-    "stage": "group",
     "home": "Sweden",
     "away": "Tunisia",
     "date": "2026-06-14",

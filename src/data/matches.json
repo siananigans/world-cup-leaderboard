@@ -57,6 +57,13 @@
   },
   {
     "stage": "group",
+    "home": "CIV",
+    "away": "Ecuador",
+    "homeGoals": 1,
+    "awayGoals": 0
+  },
+  {
+    "stage": "group",
     "home": "NED",
     "away": "JPN",
     "homeGoals": 2,
