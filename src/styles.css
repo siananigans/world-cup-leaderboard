@@ -661,6 +661,128 @@ h3,
   opacity: 0.5;
 }
 
+/* ---------------- Pride Theme (Jun 22–28) ---------------- */
+:root {
+  --pride-gradient: linear-gradient(
+    90deg,
+    #e40303,
+    #ff8c00,
+    #ffed00,
+    #008026,
+    #004dff,
+    #750787
+  );
+}
+
+/* Rainbow masthead border */
+.pride-theme .masthead {
+  border-bottom: 4px solid transparent;
+  border-image: var(--pride-gradient) 1;
+}
+
+/* LanternCare brand text rainbow gradient — pastel palette for legibility on dark green */
+.pride-theme .brand-name {
+  background: linear-gradient(
+    90deg,
+    #ff8fab,
+    #ffb347,
+    #ffe066,
+    #69db7c,
+    #74c0fc,
+    #da77f2
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.45));
+}
+
+/* Pride week banner */
+.pride-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.65rem 1rem;
+  background: #0e0e0e;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: default;
+  transition: background 0.2s ease;
+}
+
+.pride-banner:hover {
+  background: #1a1a1a;
+}
+
+.pride-banner:hover::after {
+  content: 'Celebrating Pride on and off the pitch.';
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(14, 14, 14, 0.92);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.pride-rainbow {
+  flex: 1;
+  max-width: 120px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--pride-gradient);
+}
+
+.pride-text {
+  white-space: nowrap;
+}
+
+/* Leaderboard row hover — faint rainbow sweep */
+.pride-theme .row-summary:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(228, 3, 3, 0.06),
+    rgba(255, 140, 0, 0.05),
+    rgba(255, 237, 0, 0.04),
+    rgba(0, 128, 38, 0.04),
+    rgba(0, 77, 255, 0.04),
+    rgba(117, 7, 135, 0.04)
+  );
+}
+
+/* Pride fixture card — Seattle match only */
+.pride-fixture {
+  border-left: 4px solid transparent;
+  border-image: var(--pride-gradient) 1;
+  background: linear-gradient(90deg, rgba(228, 3, 3, 0.04), transparent 50%);
+}
+
+.pride-match-badge {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--pride-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border: 1px solid rgba(228, 3, 3, 0.2);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+
 /* ---------------- Responsive ---------------- */
 @media (max-width: 620px) {
   .board-head {
