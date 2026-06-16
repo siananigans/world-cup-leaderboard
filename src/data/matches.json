@@ -96,5 +96,12 @@
     "away": "Cape Verde",
     "homeGoals": 0,
     "awayGoals": 0
+  },
+  {
+    "stage": "group",
+    "home": "FRA",
+    "away": "Senegal",
+    "homeGoals": 3,
+    "awayGoals": 1
   }
 ]

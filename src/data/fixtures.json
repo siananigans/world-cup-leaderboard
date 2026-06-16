@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "FRA",
-    "away": "Senegal",
-    "date": "2026-06-16",
-    "time": "15:00 UTC-4",
-    "kickoff": "2026-06-16T19:00:00.000Z",
-    "ground": "New York/New Jersey (East Rutherford)",
-    "group": "Group I"
-  },
-  {
-    "stage": "group",
     "home": "Iraq",
     "away": "NOR",
     "date": "2026-06-16",
