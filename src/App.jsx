@@ -34,7 +34,7 @@ function Flag({ value, name }) {
 
 // How many match days (days on which one of our teams plays) to list. Counts
 // days with games, not calendar days, so gaps between rounds don't shrink it.
-const FIXTURE_DAYS = 3
+const FIXTURE_DAYS = 5
 
 // Code -> team record, so fixtures can show a flag + name for tracked teams.
 // Untracked opponents are stored as their raw name and fall back gracefully.
