@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "IRN",
-    "away": "NZL",
-    "date": "2026-06-15",
-    "time": "18:00 UTC-7",
-    "kickoff": "2026-06-16T01:00:00.000Z",
-    "ground": "Los Angeles (Inglewood)",
-    "group": "Group G"
-  },
-  {
-    "stage": "group",
     "home": "FRA",
     "away": "Senegal",
     "date": "2026-06-16",
