@@ -27,7 +27,10 @@ const RANK_MEDAL = PRIDE_WEEK_ACTIVE
 
 function Flag({ value, name }) {
   if (value && value.startsWith('/')) {
-    return <img className="team-flag-img" src={value} alt={name} title={name} />
+    // Resolve against the app's base URL so image flags work on a GitHub Pages
+    // project subpath (e.g. /world-cup-leaderboard/), not just the domain root.
+    const src = import.meta.env.BASE_URL.replace(/\/$/, '') + value
+    return <img className="team-flag-img" src={src} alt={name} title={name} />
   }
   return <span className="team-flag">{value}</span>
 }
