@@ -11,7 +11,19 @@ import {
 import SnackForm from './SnackForm.jsx'
 import lanternMark from './assets/lantern-mark.png'
 
-const RANK_MEDAL = { 1: '🥇', 2: '🥈', 3: '🥉' }
+// Pride week: banner + masthead + leaderboard decorations visible June 22–28
+const PRIDE_WEEK_START = new Date('2026-06-22T00:00:00Z')
+const PRIDE_WEEK_END = new Date('2026-06-28T23:59:59Z')
+const PRIDE_WEEK_ACTIVE = new Date() >= PRIDE_WEEK_START && new Date() <= PRIDE_WEEK_END
+
+// The specific Seattle pride match: EGY vs IRN, Jun 26 local / Jun 27 03:00 UTC
+// Vancouver shares the same kickoff, so ground is required to avoid false matches
+const isPrideMatch = (f) =>
+  f.kickoff === '2026-06-27T03:00:00.000Z' && f.ground === 'Seattle'
+
+const RANK_MEDAL = PRIDE_WEEK_ACTIVE
+  ? { 1: '🌈 🥇', 2: '🌈 🥈', 3: '🌈 🥉' }
+  : { 1: '🥇', 2: '🥈', 3: '🥉' }
 
 function Flag({ value, name }) {
   if (value && value.startsWith('/')) {
@@ -105,7 +117,7 @@ function App() {
   const hasMatches = matches.length > 0
 
   return (
-    <div className="page">
+    <div className={`page${PRIDE_WEEK_ACTIVE ? ' pride-theme' : ''}`}>
       <header className="masthead">
         <div className="masthead-inner">
           <div className="brand">
@@ -120,12 +132,25 @@ function App() {
           </p>
         </div>
       </header>
+      {PRIDE_WEEK_ACTIVE && (
+        <div
+          className="pride-banner"
+          role="banner"
+          title="Celebrating Pride on and off the pitch."
+        >
+          <span className="pride-rainbow" aria-hidden="true"></span>
+          <span className="pride-text">
+            🏳️‍🌈 Pride Match Week — June 22–28 · Celebrating with Pride
+          </span>
+          <span className="pride-rainbow" aria-hidden="true"></span>
+        </div>
+      )}
 
       <main className="container">
         {!hasMatches && (
           <div className="kickoff-banner">
             <span className="kickoff-emoji">🌟</span>
-            The tournament hasn’t kicked off yet — everyone starts at zero.
+            The tournament hasn't kicked off yet — everyone starts at zero.
             Scores light up here as results come in.
           </div>
         )}
@@ -135,7 +160,9 @@ function App() {
             <span className="col-rank">#</span>
             <span className="col-player">Player</span>
             <span className="col-teams">Teams</span>
-            <span className="col-points">Points</span>
+            <span className="col-points">
+              Points{PRIDE_WEEK_ACTIVE ? ' 🏳️‍🌈' : ''}
+            </span>
           </div>
 
           {leaderboard.map((row) => {
@@ -293,9 +320,10 @@ function Fixtures() {
           <ol className="fixture-list">
             {day.games.map((f, i) => {
               const when = f.kickoff ? new Date(f.kickoff) : null
+              const pride = isPrideMatch(f)
               return (
                 <li
-                  className="fixture"
+                  className={`fixture${pride ? ' pride-fixture' : ''}`}
                   key={`${f.date}-${f.home}-${f.away}-${i}`}
                 >
                   <span className="fx-time">
@@ -307,7 +335,16 @@ function Fixtures() {
                       <span className="fx-v">v</span>
                       <FixtureTeam codeOrName={f.away} align="away" />
                     </span>
-                    {f.ground && <span className="fx-ground">{f.ground}</span>}
+                    {f.ground && (
+                      <span className="fx-ground">
+                        {f.ground}{pride ? ' 🏳️‍🌈' : ''}
+                      </span>
+                    )}
+                    {pride && (
+                      <span className="pride-match-badge">
+                        Official Pride Match
+                      </span>
+                    )}
                   </span>
                 </li>
               )
@@ -354,7 +391,7 @@ function ScoringLegend() {
         </li>
       </ul>
       <p className="legend-note">
-        Each player’s total is the sum of both their teams, plus snack bonuses.
+        Each player's total is the sum of both their teams, plus snack bonuses.
         Stage bonuses are cumulative. Ties are broken by total goals scored.
       </p>
     </section>
