@@ -250,6 +250,13 @@ h3,
   line-height: 1;
 }
 
+.team-flag-img {
+  width: 1.25em;
+  height: auto;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
 .team-name {
   color: var(--ink);
 }
