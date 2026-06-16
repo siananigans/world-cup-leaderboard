@@ -13,6 +13,13 @@ import lanternMark from './assets/lantern-mark.png'
 
 const RANK_MEDAL = { 1: '🥇', 2: '🥈', 3: '🥉' }
 
+function Flag({ value, name }) {
+  if (value && value.startsWith('/')) {
+    return <img className="team-flag-img" src={value} alt={name} title={name} />
+  }
+  return <span className="team-flag">{value}</span>
+}
+
 // How many match days (days on which one of our teams plays) to list. Counts
 // days with games, not calendar days, so gaps between rounds don't shrink it.
 const FIXTURE_DAYS = 3
@@ -80,7 +87,7 @@ function TeamChip({ teamScore }) {
   const { team, points, played } = teamScore
   return (
     <div className="team-chip" title={`${team.name}: ${points} pts`}>
-      <span className="team-flag">{team.flag}</span>
+      <Flag value={team.flag} name={team.name} />
       <span className="team-name">{team.name}</span>
       <span className="team-pts">{played > 0 ? `${points}` : '–'}</span>
     </div>
@@ -227,7 +234,7 @@ function TeamBreakdown({ teamScore }) {
   return (
     <div className="team-breakdown">
       <div className="tb-head">
-        <span className="team-flag">{t.team.flag}</span>
+        <Flag value={t.team.flag} name={t.team.name} />
         <span className="tb-name">{t.team.name}</span>
         <span className="tb-total">{t.points} pts</span>
       </div>
@@ -259,7 +266,7 @@ function FixtureTeam({ codeOrName, align }) {
   const owner = OWNER_BY_CODE[codeOrName]
   return (
     <span className={`fx-team ${align}`}>
-      <span className="team-flag">{team.flag}</span>
+      <Flag value={team.flag} name={team.name} />
       <span className="fx-team-col">
         <span className="fx-team-name">{team.name}</span>
         {owner && (

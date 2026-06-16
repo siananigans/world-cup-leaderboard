@@ -13,7 +13,7 @@
   { "code": "CIV", "name": "Côte d'Ivoire", "flag": "🇨🇮" },
   { "code": "SCO", "name": "Scotland", "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿" },
   { "code": "PAR", "name": "Paraguay", "flag": "🇵🇾" },
-  { "code": "IRN", "name": "Iran", "flag": "🇮🇷" },
+  { "code": "IRN", "name": "Iran", "flag": "/iran-flag.png" },
   { "code": "CZE", "name": "Czech Republic", "flag": "🇨🇿" },
   { "code": "ALG", "name": "Algeria", "flag": "🇩🇿" },
   { "code": "CAN", "name": "Canada", "flag": "🇨🇦" },
