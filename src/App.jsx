@@ -17,9 +17,10 @@ const PRIDE_WEEK_END = new Date('2026-06-28T23:59:59Z')
 const PRIDE_WEEK_ACTIVE = new Date() >= PRIDE_WEEK_START && new Date() <= PRIDE_WEEK_END
 
 // The specific Seattle pride match: EGY vs IRN, Jun 26 local / Jun 27 03:00 UTC
-// Vancouver shares the same kickoff, so ground is required to avoid false matches
+// Matched by teams + venue so it works whether the fixture is upcoming or live.
 const isPrideMatch = (f) =>
-  f.kickoff === '2026-06-27T03:00:00.000Z' && f.ground === 'Seattle'
+  f.ground === 'Seattle' &&
+  ((f.home === 'EGY' && f.away === 'IRN') || (f.home === 'IRN' && f.away === 'EGY'))
 
 const RANK_MEDAL = PRIDE_WEEK_ACTIVE
   ? { 1: '🌈 🥇', 2: '🌈 🥈', 3: '🌈 🥉' }
@@ -38,6 +39,13 @@ function Flag({ value, name }) {
 // How many match days (days on which one of our teams plays) to list. Counts
 // days with games, not calendar days, so gaps between rounds don't shrink it.
 const FIXTURE_DAYS = 5
+
+// A match is "live" if it kicked off within this window and hasn't yet been
+// recorded as finished in matches.json. 150 min covers 90 min + stoppages + ET.
+const LIVE_WINDOW_MS = 150 * 60 * 1000
+
+// Keys of already-completed matches so we don't show them as live.
+const COMPLETED_KEYS = new Set(matches.map((m) => `${m.home}-${m.away}`))
 
 // Code -> team record, so fixtures can show a flag + name for tracked teams.
 // Untracked opponents are stored as their raw name and fall back gracefully.
@@ -62,6 +70,20 @@ const TIME_FMT = new Intl.DateTimeFormat(undefined, {
   hour: '2-digit',
   minute: '2-digit',
 })
+
+function getLiveMatches() {
+  const now = Date.now()
+  return fixtures
+    .map((f) => ({ ...f, ts: f.kickoff ? Date.parse(f.kickoff) : Infinity }))
+    .filter(
+      (f) =>
+        Number.isFinite(f.ts) &&
+        f.ts < now &&
+        now - f.ts < LIVE_WINDOW_MS &&
+        !COMPLETED_KEYS.has(`${f.home}-${f.away}`),
+    )
+    .sort((a, b) => a.ts - b.ts)
+}
 
 // Upcoming fixtures grouped by their local match day, limited to the next few
 // days that have games. Done at render time (against the viewer's clock and
@@ -157,6 +179,8 @@ function App() {
             Scores light up here as results come in.
           </div>
         )}
+
+        <LiveMatches />
 
         <section className="board" aria-label="Leaderboard">
           <div className="board-head">
@@ -306,6 +330,53 @@ function FixtureTeam({ codeOrName, align }) {
         )}
       </span>
     </span>
+  )
+}
+
+function LiveMatches() {
+  const live = useMemo(() => getLiveMatches(), [])
+  if (live.length === 0) return null
+
+  return (
+    <section className="live-matches" aria-label="Matches in progress">
+      <h2>
+        <span className="live-dot" aria-hidden="true" />
+        Now Playing
+      </h2>
+      <ol className="fixture-list">
+        {live.map((f, i) => {
+          const when = f.kickoff ? new Date(f.kickoff) : null
+          const pride = isPrideMatch(f)
+          return (
+            <li
+              className={`fixture live-fixture${pride ? ' pride-fixture' : ''}`}
+              key={`live-${f.home}-${f.away}-${i}`}
+            >
+              <span className="fx-time fx-time--live">
+                {when ? TIME_FMT.format(when) : 'TBC'}
+              </span>
+              <span className="fx-body">
+                <span className="fx-match">
+                  <FixtureTeam codeOrName={f.home} align="home" />
+                  <span className="fx-v">
+                    <span className="live-badge">LIVE</span>
+                  </span>
+                  <FixtureTeam codeOrName={f.away} align="away" />
+                </span>
+                {f.ground && (
+                  <span className="fx-ground">
+                    {f.ground}{pride ? ' 🏳️‍🌈' : ''}
+                  </span>
+                )}
+                {pride && (
+                  <span className="pride-match-badge">Official Pride Match</span>
+                )}
+              </span>
+            </li>
+          )
+        })}
+      </ol>
+    </section>
   )
 }
 
