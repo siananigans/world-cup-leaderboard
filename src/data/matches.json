@@ -131,5 +131,12 @@
     "away": "DR Congo",
     "homeGoals": 1,
     "awayGoals": 1
+  },
+  {
+    "stage": "group",
+    "home": "ENG",
+    "away": "CRO",
+    "homeGoals": 4,
+    "awayGoals": 2
   }
 ]

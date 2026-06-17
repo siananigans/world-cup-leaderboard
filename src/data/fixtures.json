@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "ENG",
-    "away": "CRO",
-    "date": "2026-06-17",
-    "time": "15:00 UTC-5",
-    "kickoff": "2026-06-17T20:00:00.000Z",
-    "ground": "Dallas (Arlington)",
-    "group": "Group L"
-  },
-  {
-    "stage": "group",
     "home": "Ghana",
     "away": "Panama",
     "date": "2026-06-17",
