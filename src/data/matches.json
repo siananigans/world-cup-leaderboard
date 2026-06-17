@@ -117,5 +117,12 @@
     "away": "ALG",
     "homeGoals": 3,
     "awayGoals": 0
+  },
+  {
+    "stage": "group",
+    "home": "AUT",
+    "away": "Jordan",
+    "homeGoals": 3,
+    "awayGoals": 1
   }
 ]
