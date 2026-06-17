@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState, useEffect } from 'react'
 import players from './data/players.json'
 import teams from './data/teams.json'
 import matches from './data/matches.json'
@@ -333,8 +333,44 @@ function FixtureTeam({ codeOrName, align }) {
   )
 }
 
+const ESPN_URL =
+  'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard'
+
 function LiveMatches() {
   const live = useMemo(() => getLiveMatches(), [])
+  const [scores, setScores] = useState({})
+
+  useEffect(() => {
+    if (live.length === 0) return
+    fetch(ESPN_URL)
+      .then((r) => r.json())
+      .then((data) => {
+        const map = {}
+        for (const event of data.events || []) {
+          const comp = event.competitions?.[0]
+          if (!comp) continue
+          const home = comp.competitors?.find((c) => c.homeAway === 'home')
+          const away = comp.competitors?.find((c) => c.homeAway === 'away')
+          if (!home || !away) continue
+          const key = `${home.team.abbreviation}-${away.team.abbreviation}`
+          const state = event.status?.type?.state
+          const statusName = event.status?.type?.name
+          const clock =
+            state === 'post' ? 'FT'
+            : statusName === 'STATUS_HALFTIME' ? 'Half-time'
+            : event.status?.displayClock
+          map[key] = {
+            homeScore: home.score ?? '0',
+            awayScore: away.score ?? '0',
+            clock,
+            live: state === 'in',
+          }
+        }
+        setScores(map)
+      })
+      .catch(() => {})
+  }, [live.length])
+
   if (live.length === 0) return null
 
   return (
@@ -347,6 +383,9 @@ function LiveMatches() {
         {live.map((f, i) => {
           const when = f.kickoff ? new Date(f.kickoff) : null
           const pride = isPrideMatch(f)
+          const scoreData =
+            scores[`${f.home}-${f.away}`] || scores[`${f.away}-${f.home}`]
+          const swapped = !!scores[`${f.away}-${f.home}`]
           return (
             <li
               className={`fixture live-fixture${pride ? ' pride-fixture' : ''}`}
@@ -359,7 +398,22 @@ function LiveMatches() {
                 <span className="fx-match">
                   <FixtureTeam codeOrName={f.home} align="home" />
                   <span className="fx-v">
-                    <span className="live-badge">LIVE</span>
+                    <span className="live-score">
+                      <span className="live-badge">
+                        <span className="live-ball" aria-hidden="true">⚽</span>
+                        LIVE
+                      </span>
+                      {scoreData && (
+                        <>
+                          <span className="live-score-line">
+                            {swapped ? scoreData.awayScore : scoreData.homeScore}
+                            {' – '}
+                            {swapped ? scoreData.homeScore : scoreData.awayScore}
+                          </span>
+                          <span className="live-clock">{scoreData.clock}</span>
+                        </>
+                      )}
+                    </span>
                   </span>
                   <FixtureTeam codeOrName={f.away} align="away" />
                 </span>
