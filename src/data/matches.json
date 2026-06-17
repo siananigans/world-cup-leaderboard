@@ -124,5 +124,12 @@
     "away": "Jordan",
     "homeGoals": 3,
     "awayGoals": 1
+  },
+  {
+    "stage": "group",
+    "home": "POR",
+    "away": "DR Congo",
+    "homeGoals": 1,
+    "awayGoals": 1
   }
 ]
