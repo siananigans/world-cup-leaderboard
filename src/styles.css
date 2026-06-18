@@ -563,13 +563,19 @@ h3,
   50% { opacity: 0.35; transform: scale(0.75); }
 }
 
+@keyframes ball-bounce {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-5px); }
+  60% { transform: translateY(-3px); }
+}
+
 .live-dot {
   display: inline-block;
   width: 0.6rem;
   height: 0.6rem;
   background: #e02020;
   border-radius: 50%;
-  animation: live-pulse 1.4s ease-in-out infinite;
+  animation: live-pulse 2.8s ease-in-out infinite;
 }
 
 .live-fixture {
@@ -583,7 +589,9 @@ h3,
 }
 
 .live-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
   font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.07em;
@@ -592,7 +600,35 @@ h3,
   border-radius: 4px;
   padding: 0.12rem 0.38rem;
   line-height: 1.4;
-  animation: live-pulse 1.4s ease-in-out infinite;
+}
+
+.live-ball {
+  display: inline-block;
+  font-size: 0.75rem;
+  animation: ball-bounce 1.2s ease-in-out infinite;
+}
+
+.live-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.live-score-line {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.live-clock {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
 }
 
 /* ---------------- Snack form ---------------- */
