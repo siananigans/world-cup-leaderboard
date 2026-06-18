@@ -345,6 +345,8 @@ function LiveMatches() {
     fetch(ESPN_URL)
       .then((r) => r.json())
       .then((data) => {
+        // Keyed by ESPN abbreviation so we match on our tracked team code
+        // regardless of what ESPN calls the opponent.
         const map = {}
         for (const event of data.events || []) {
           const comp = event.competitions?.[0]
@@ -352,19 +354,22 @@ function LiveMatches() {
           const home = comp.competitors?.find((c) => c.homeAway === 'home')
           const away = comp.competitors?.find((c) => c.homeAway === 'away')
           if (!home || !away) continue
-          const key = `${home.team.abbreviation}-${away.team.abbreviation}`
           const state = event.status?.type?.state
           const statusName = event.status?.type?.name
           const clock =
             state === 'post' ? 'FT'
             : statusName === 'STATUS_HALFTIME' ? 'Half-time'
             : event.status?.displayClock
-          map[key] = {
+          const entry = {
+            homeAbbr: home.team.abbreviation,
+            awayAbbr: away.team.abbreviation,
             homeScore: home.score ?? '0',
             awayScore: away.score ?? '0',
             clock,
             live: state === 'in',
           }
+          map[home.team.abbreviation] = entry
+          map[away.team.abbreviation] = entry
         }
         setScores(map)
       })
@@ -383,9 +388,9 @@ function LiveMatches() {
         {live.map((f, i) => {
           const when = f.kickoff ? new Date(f.kickoff) : null
           const pride = isPrideMatch(f)
-          const scoreData =
-            scores[`${f.home}-${f.away}`] || scores[`${f.away}-${f.home}`]
-          const swapped = !!scores[`${f.away}-${f.home}`]
+          const scoreData = scores[f.home] || scores[f.away]
+          // If our home team is ESPN's away team the scores are flipped
+          const swapped = scoreData && scoreData.homeAbbr === f.away
           return (
             <li
               className={`fixture live-fixture${pride ? ' pride-fixture' : ''}`}
