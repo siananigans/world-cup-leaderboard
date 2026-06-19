@@ -36,6 +36,13 @@
   },
   {
     "stage": "group",
+    "home": "CAN",
+    "away": "Qatar",
+    "homeGoals": 6,
+    "awayGoals": 0
+  },
+  {
+    "stage": "group",
     "home": "BRA",
     "away": "MAR",
     "homeGoals": 1,

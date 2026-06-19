@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "CAN",
-    "away": "Qatar",
-    "date": "2026-06-18",
-    "time": "15:00 UTC-7",
-    "kickoff": "2026-06-18T22:00:00.000Z",
-    "ground": "Vancouver",
-    "group": "Group B"
-  },
-  {
-    "stage": "group",
     "home": "Mexico",
     "away": "KOR",
     "date": "2026-06-18",
