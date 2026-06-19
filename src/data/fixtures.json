@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "Mexico",
-    "away": "KOR",
-    "date": "2026-06-18",
-    "time": "19:00 UTC-6",
-    "kickoff": "2026-06-19T01:00:00.000Z",
-    "ground": "Guadalajara (Zapopan)",
-    "group": "Group A"
-  },
-  {
-    "stage": "group",
     "home": "USA",
     "away": "Australia",
     "date": "2026-06-19",
