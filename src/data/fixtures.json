@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "USA",
-    "away": "Australia",
-    "date": "2026-06-19",
-    "time": "12:00 UTC-7",
-    "kickoff": "2026-06-19T19:00:00.000Z",
-    "ground": "Seattle",
-    "group": "Group D"
-  },
-  {
-    "stage": "group",
     "home": "SCO",
     "away": "MAR",
     "date": "2026-06-19",
