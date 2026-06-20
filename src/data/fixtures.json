@@ -1,26 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "BRA",
-    "away": "HAI",
-    "date": "2026-06-19",
-    "time": "20:30 UTC-4",
-    "kickoff": "2026-06-20T00:30:00.000Z",
-    "ground": "Philadelphia",
-    "group": "Group C"
-  },
-  {
-    "stage": "group",
-    "home": "TUR",
-    "away": "PAR",
-    "date": "2026-06-19",
-    "time": "20:00 UTC-7",
-    "kickoff": "2026-06-20T03:00:00.000Z",
-    "ground": "San Francisco Bay Area (Santa Clara)",
-    "group": "Group D"
-  },
-  {
-    "stage": "group",
     "home": "NED",
     "away": "SWE",
     "date": "2026-06-20",
