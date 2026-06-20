@@ -127,6 +127,13 @@
   },
   {
     "stage": "group",
+    "home": "NED",
+    "away": "SWE",
+    "homeGoals": 5,
+    "awayGoals": 1
+  },
+  {
+    "stage": "group",
     "home": "BEL",
     "away": "EGY",
     "homeGoals": 1,
