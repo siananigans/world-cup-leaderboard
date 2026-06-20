@@ -113,6 +113,13 @@
   },
   {
     "stage": "group",
+    "home": "GER",
+    "away": "CIV",
+    "homeGoals": 2,
+    "awayGoals": 1
+  },
+  {
+    "stage": "group",
     "home": "NED",
     "away": "JPN",
     "homeGoals": 2,
