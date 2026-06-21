@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "ESP",
-    "away": "Saudi Arabia",
-    "date": "2026-06-21",
-    "time": "12:00 UTC-4",
-    "kickoff": "2026-06-21T16:00:00.000Z",
-    "ground": "Atlanta",
-    "group": "Group H"
-  },
-  {
-    "stage": "group",
     "home": "BEL",
     "away": "IRN",
     "date": "2026-06-21",

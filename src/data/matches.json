@@ -169,6 +169,13 @@
   },
   {
     "stage": "group",
+    "home": "ESP",
+    "away": "Saudi Arabia",
+    "homeGoals": 4,
+    "awayGoals": 0
+  },
+  {
+    "stage": "group",
     "home": "FRA",
     "away": "Senegal",
     "homeGoals": 3,
