@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "BEL",
-    "away": "IRN",
-    "date": "2026-06-21",
-    "time": "12:00 UTC-7",
-    "kickoff": "2026-06-21T19:00:00.000Z",
-    "ground": "Los Angeles (Inglewood)",
-    "group": "Group G"
-  },
-  {
-    "stage": "group",
     "home": "Uruguay",
     "away": "Cape Verde",
     "date": "2026-06-21",

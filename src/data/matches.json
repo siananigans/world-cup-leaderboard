@@ -162,6 +162,13 @@
   },
   {
     "stage": "group",
+    "home": "BEL",
+    "away": "IRN",
+    "homeGoals": 0,
+    "awayGoals": 0
+  },
+  {
+    "stage": "group",
     "home": "ESP",
     "away": "Cape Verde",
     "homeGoals": 0,
