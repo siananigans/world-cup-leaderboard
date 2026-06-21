@@ -141,6 +141,13 @@
   },
   {
     "stage": "group",
+    "home": "Tunisia",
+    "away": "JPN",
+    "homeGoals": 0,
+    "awayGoals": 4
+  },
+  {
+    "stage": "group",
     "home": "BEL",
     "away": "EGY",
     "homeGoals": 1,

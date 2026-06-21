@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "Tunisia",
-    "away": "JPN",
-    "date": "2026-06-20",
-    "time": "22:00 UTC-6",
-    "kickoff": "2026-06-21T04:00:00.000Z",
-    "ground": "Monterrey (Guadalupe)",
-    "group": "Group F"
-  },
-  {
-    "stage": "group",
     "home": "ESP",
     "away": "Saudi Arabia",
     "date": "2026-06-21",
