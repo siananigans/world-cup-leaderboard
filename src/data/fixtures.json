@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "ARG",
-    "away": "AUT",
-    "date": "2026-06-22",
-    "time": "12:00 UTC-5",
-    "kickoff": "2026-06-22T17:00:00.000Z",
-    "ground": "Dallas (Arlington)",
-    "group": "Group J"
-  },
-  {
-    "stage": "group",
     "home": "FRA",
     "away": "Iraq",
     "date": "2026-06-22",

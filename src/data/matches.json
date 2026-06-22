@@ -218,6 +218,13 @@
   },
   {
     "stage": "group",
+    "home": "ARG",
+    "away": "AUT",
+    "homeGoals": 2,
+    "awayGoals": 0
+  },
+  {
+    "stage": "group",
     "home": "POR",
     "away": "DR Congo",
     "homeGoals": 1,
