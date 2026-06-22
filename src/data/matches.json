@@ -169,6 +169,13 @@
   },
   {
     "stage": "group",
+    "home": "NZL",
+    "away": "EGY",
+    "homeGoals": 1,
+    "awayGoals": 3
+  },
+  {
+    "stage": "group",
     "home": "ESP",
     "away": "Cape Verde",
     "homeGoals": 0,

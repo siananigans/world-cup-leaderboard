@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "NZL",
-    "away": "EGY",
-    "date": "2026-06-21",
-    "time": "18:00 UTC-7",
-    "kickoff": "2026-06-22T01:00:00.000Z",
-    "ground": "Vancouver",
-    "group": "Group G"
-  },
-  {
-    "stage": "group",
     "home": "ARG",
     "away": "AUT",
     "date": "2026-06-22",
