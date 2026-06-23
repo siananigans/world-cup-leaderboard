@@ -1,26 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "FRA",
-    "away": "Iraq",
-    "date": "2026-06-22",
-    "time": "17:00 UTC-4",
-    "kickoff": "2026-06-22T21:00:00.000Z",
-    "ground": "Philadelphia",
-    "group": "Group I"
-  },
-  {
-    "stage": "group",
-    "home": "NOR",
-    "away": "Senegal",
-    "date": "2026-06-22",
-    "time": "20:00 UTC-4",
-    "kickoff": "2026-06-23T00:00:00.000Z",
-    "ground": "New York/New Jersey (East Rutherford)",
-    "group": "Group I"
-  },
-  {
-    "stage": "group",
     "home": "Jordan",
     "away": "ALG",
     "date": "2026-06-22",

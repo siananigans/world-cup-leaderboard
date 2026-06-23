@@ -204,6 +204,20 @@
   },
   {
     "stage": "group",
+    "home": "FRA",
+    "away": "Iraq",
+    "homeGoals": 3,
+    "awayGoals": 0
+  },
+  {
+    "stage": "group",
+    "home": "NOR",
+    "away": "Senegal",
+    "homeGoals": 3,
+    "awayGoals": 2
+  },
+  {
+    "stage": "group",
     "home": "ARG",
     "away": "ALG",
     "homeGoals": 3,
