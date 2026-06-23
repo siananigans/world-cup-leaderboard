@@ -239,6 +239,13 @@
   },
   {
     "stage": "group",
+    "home": "Jordan",
+    "away": "ALG",
+    "homeGoals": 1,
+    "awayGoals": 2
+  },
+  {
+    "stage": "group",
     "home": "POR",
     "away": "DR Congo",
     "homeGoals": 1,
