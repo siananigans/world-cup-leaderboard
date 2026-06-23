@@ -260,6 +260,13 @@
   },
   {
     "stage": "group",
+    "home": "POR",
+    "away": "UZB",
+    "homeGoals": 5,
+    "awayGoals": 0
+  },
+  {
+    "stage": "group",
     "home": "ENG",
     "away": "CRO",
     "homeGoals": 4,
