@@ -271,5 +271,12 @@
     "away": "CRO",
     "homeGoals": 4,
     "awayGoals": 2
+  },
+  {
+    "stage": "group",
+    "home": "ENG",
+    "away": "Ghana",
+    "homeGoals": 0,
+    "awayGoals": 0
   }
 ]

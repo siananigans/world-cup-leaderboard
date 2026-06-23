@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "ENG",
-    "away": "Ghana",
-    "date": "2026-06-23",
-    "time": "16:00 UTC-4",
-    "kickoff": "2026-06-23T20:00:00.000Z",
-    "ground": "Boston (Foxborough)",
-    "group": "Group L"
-  },
-  {
-    "stage": "group",
     "home": "Panama",
     "away": "CRO",
     "date": "2026-06-23",
