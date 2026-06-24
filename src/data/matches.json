@@ -50,6 +50,13 @@
   },
   {
     "stage": "group",
+    "home": "SUI",
+    "away": "CAN",
+    "homeGoals": 2,
+    "awayGoals": 1
+  },
+  {
+    "stage": "group",
     "home": "BRA",
     "away": "MAR",
     "homeGoals": 1,

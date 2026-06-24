@@ -1,26 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "SUI",
-    "away": "CAN",
-    "date": "2026-06-24",
-    "time": "12:00 UTC-7",
-    "kickoff": "2026-06-24T19:00:00.000Z",
-    "ground": "Vancouver",
-    "group": "Group B"
-  },
-  {
-    "stage": "group",
-    "home": "Bosnia & Herzegovina",
-    "away": "Qatar",
-    "date": "2026-06-24",
-    "time": "12:00 UTC-7",
-    "kickoff": "2026-06-24T19:00:00.000Z",
-    "ground": "Seattle",
-    "group": "Group B"
-  },
-  {
-    "stage": "group",
     "home": "SCO",
     "away": "BRA",
     "date": "2026-06-24",
