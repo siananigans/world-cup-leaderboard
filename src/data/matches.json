@@ -267,6 +267,13 @@
   },
   {
     "stage": "group",
+    "home": "COL",
+    "away": "DR Congo",
+    "homeGoals": 1,
+    "awayGoals": 0
+  },
+  {
+    "stage": "group",
     "home": "ENG",
     "away": "CRO",
     "homeGoals": 4,
@@ -278,5 +285,12 @@
     "away": "Ghana",
     "homeGoals": 0,
     "awayGoals": 0
+  },
+  {
+    "stage": "group",
+    "home": "Panama",
+    "away": "CRO",
+    "homeGoals": 0,
+    "awayGoals": 1
   }
 ]
