@@ -85,6 +85,20 @@
   },
   {
     "stage": "group",
+    "home": "SCO",
+    "away": "BRA",
+    "homeGoals": 0,
+    "awayGoals": 3
+  },
+  {
+    "stage": "group",
+    "home": "MAR",
+    "away": "HAI",
+    "homeGoals": 4,
+    "awayGoals": 2
+  },
+  {
+    "stage": "group",
     "home": "USA",
     "away": "PAR",
     "homeGoals": 4,
