@@ -1,26 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "Curaçao",
-    "away": "CIV",
-    "date": "2026-06-25",
-    "time": "16:00 UTC-4",
-    "kickoff": "2026-06-25T20:00:00.000Z",
-    "ground": "Philadelphia",
-    "group": "Group E"
-  },
-  {
-    "stage": "group",
-    "home": "Ecuador",
-    "away": "GER",
-    "date": "2026-06-25",
-    "time": "16:00 UTC-4",
-    "kickoff": "2026-06-25T20:00:00.000Z",
-    "ground": "New York/New Jersey (East Rutherford)",
-    "group": "Group E"
-  },
-  {
-    "stage": "group",
     "home": "JPN",
     "away": "SWE",
     "date": "2026-06-25",

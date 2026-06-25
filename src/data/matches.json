@@ -155,6 +155,20 @@
   },
   {
     "stage": "group",
+    "home": "Curaçao",
+    "away": "CIV",
+    "homeGoals": 0,
+    "awayGoals": 2
+  },
+  {
+    "stage": "group",
+    "home": "Ecuador",
+    "away": "GER",
+    "homeGoals": 2,
+    "awayGoals": 1
+  },
+  {
+    "stage": "group",
     "home": "NED",
     "away": "JPN",
     "homeGoals": 2,
