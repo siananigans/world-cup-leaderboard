@@ -22,6 +22,20 @@
   },
   {
     "stage": "group",
+    "home": "CZE",
+    "away": "Mexico",
+    "homeGoals": 0,
+    "awayGoals": 3
+  },
+  {
+    "stage": "group",
+    "home": "South Africa",
+    "away": "KOR",
+    "homeGoals": 1,
+    "awayGoals": 0
+  },
+  {
+    "stage": "group",
     "home": "CAN",
     "away": "Bosnia & Herzegovina",
     "homeGoals": 1,

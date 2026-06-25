@@ -1,26 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "CZE",
-    "away": "Mexico",
-    "date": "2026-06-24",
-    "time": "19:00 UTC-6",
-    "kickoff": "2026-06-25T01:00:00.000Z",
-    "ground": "Mexico City",
-    "group": "Group A"
-  },
-  {
-    "stage": "group",
-    "home": "South Africa",
-    "away": "KOR",
-    "date": "2026-06-24",
-    "time": "19:00 UTC-6",
-    "kickoff": "2026-06-25T01:00:00.000Z",
-    "ground": "Monterrey (Guadalupe)",
-    "group": "Group A"
-  },
-  {
-    "stage": "group",
     "home": "Curaçao",
     "away": "CIV",
     "date": "2026-06-25",
