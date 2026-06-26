@@ -295,6 +295,13 @@
   },
   {
     "stage": "group",
+    "home": "NOR",
+    "away": "FRA",
+    "homeGoals": 1,
+    "awayGoals": 4
+  },
+  {
+    "stage": "group",
     "home": "ARG",
     "away": "ALG",
     "homeGoals": 3,

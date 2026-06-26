@@ -1,26 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "NOR",
-    "away": "FRA",
-    "date": "2026-06-26",
-    "time": "15:00 UTC-4",
-    "kickoff": "2026-06-26T19:00:00.000Z",
-    "ground": "Boston (Foxborough)",
-    "group": "Group I"
-  },
-  {
-    "stage": "group",
-    "home": "Senegal",
-    "away": "Iraq",
-    "date": "2026-06-26",
-    "time": "15:00 UTC-4",
-    "kickoff": "2026-06-26T19:00:00.000Z",
-    "ground": "Toronto",
-    "group": "Group I"
-  },
-  {
-    "stage": "group",
     "home": "Cape Verde",
     "away": "Saudi Arabia",
     "date": "2026-06-26",
