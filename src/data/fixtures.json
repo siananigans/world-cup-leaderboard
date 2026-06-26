@@ -1,26 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "TUR",
-    "away": "USA",
-    "date": "2026-06-25",
-    "time": "19:00 UTC-7",
-    "kickoff": "2026-06-26T02:00:00.000Z",
-    "ground": "Los Angeles (Inglewood)",
-    "group": "Group D"
-  },
-  {
-    "stage": "group",
-    "home": "PAR",
-    "away": "Australia",
-    "date": "2026-06-25",
-    "time": "19:00 UTC-7",
-    "kickoff": "2026-06-26T02:00:00.000Z",
-    "ground": "San Francisco Bay Area (Santa Clara)",
-    "group": "Group D"
-  },
-  {
-    "stage": "group",
     "home": "NOR",
     "away": "FRA",
     "date": "2026-06-26",
