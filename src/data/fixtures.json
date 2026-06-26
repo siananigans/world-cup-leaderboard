@@ -1,26 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "JPN",
-    "away": "SWE",
-    "date": "2026-06-25",
-    "time": "18:00 UTC-5",
-    "kickoff": "2026-06-25T23:00:00.000Z",
-    "ground": "Dallas (Arlington)",
-    "group": "Group F"
-  },
-  {
-    "stage": "group",
-    "home": "Tunisia",
-    "away": "NED",
-    "date": "2026-06-25",
-    "time": "18:00 UTC-5",
-    "kickoff": "2026-06-25T23:00:00.000Z",
-    "ground": "Kansas City",
-    "group": "Group F"
-  },
-  {
-    "stage": "group",
     "home": "TUR",
     "away": "USA",
     "date": "2026-06-25",

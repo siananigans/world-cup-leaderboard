@@ -197,6 +197,20 @@
   },
   {
     "stage": "group",
+    "home": "JPN",
+    "away": "SWE",
+    "homeGoals": 1,
+    "awayGoals": 1
+  },
+  {
+    "stage": "group",
+    "home": "Tunisia",
+    "away": "NED",
+    "homeGoals": 1,
+    "awayGoals": 3
+  },
+  {
+    "stage": "group",
     "home": "BEL",
     "away": "EGY",
     "homeGoals": 1,
