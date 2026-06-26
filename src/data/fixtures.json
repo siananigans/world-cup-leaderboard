@@ -128,5 +128,25 @@
     "kickoff": "2026-06-28T19:00:00.000Z",
     "ground": "Los Angeles (Inglewood)",
     "group": null
+  },
+  {
+    "stage": "group",
+    "home": "BRA",
+    "away": "JPN",
+    "date": "2026-06-29",
+    "time": "12:00 UTC-5",
+    "kickoff": "2026-06-29T17:00:00.000Z",
+    "ground": "Houston",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "NED",
+    "away": "MAR",
+    "date": "2026-06-29",
+    "time": "19:00 UTC-6",
+    "kickoff": "2026-06-30T01:00:00.000Z",
+    "ground": "Monterrey (Guadalupe)",
+    "group": null
   }
 ]
