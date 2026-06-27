@@ -1,46 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "Cape Verde",
-    "away": "Saudi Arabia",
-    "date": "2026-06-26",
-    "time": "19:00 UTC-5",
-    "kickoff": "2026-06-27T00:00:00.000Z",
-    "ground": "Houston",
-    "group": "Group H"
-  },
-  {
-    "stage": "group",
-    "home": "Uruguay",
-    "away": "ESP",
-    "date": "2026-06-26",
-    "time": "18:00 UTC-6",
-    "kickoff": "2026-06-27T00:00:00.000Z",
-    "ground": "Guadalajara (Zapopan)",
-    "group": "Group H"
-  },
-  {
-    "stage": "group",
-    "home": "EGY",
-    "away": "IRN",
-    "date": "2026-06-26",
-    "time": "20:00 UTC-7",
-    "kickoff": "2026-06-27T03:00:00.000Z",
-    "ground": "Seattle",
-    "group": "Group G"
-  },
-  {
-    "stage": "group",
-    "home": "NZL",
-    "away": "BEL",
-    "date": "2026-06-26",
-    "time": "20:00 UTC-7",
-    "kickoff": "2026-06-27T03:00:00.000Z",
-    "ground": "Vancouver",
-    "group": "Group G"
-  },
-  {
-    "stage": "group",
     "home": "Panama",
     "away": "ENG",
     "date": "2026-06-27",
