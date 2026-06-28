@@ -439,5 +439,12 @@
     "away": "Ghana",
     "homeGoals": 2,
     "awayGoals": 1
+  },
+  {
+    "stage": "group",
+    "home": "South Africa",
+    "away": "CAN",
+    "homeGoals": 0,
+    "awayGoals": 1
   }
 ]
