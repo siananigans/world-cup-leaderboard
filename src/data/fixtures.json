@@ -21,12 +21,142 @@
   },
   {
     "stage": "group",
+    "home": "GER",
+    "away": "PAR",
+    "date": "2026-06-29",
+    "time": "16:30 UTC-4",
+    "kickoff": "2026-06-29T20:30:00.000Z",
+    "ground": "Boston (Foxborough)",
+    "group": null
+  },
+  {
+    "stage": "group",
     "home": "NED",
     "away": "MAR",
     "date": "2026-06-29",
     "time": "19:00 UTC-6",
     "kickoff": "2026-06-30T01:00:00.000Z",
     "ground": "Monterrey (Guadalupe)",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "CIV",
+    "away": "NOR",
+    "date": "2026-06-30",
+    "time": "12:00 UTC-5",
+    "kickoff": "2026-06-30T17:00:00.000Z",
+    "ground": "Dallas (Arlington)",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "FRA",
+    "away": "SWE",
+    "date": "2026-06-30",
+    "time": "17:00 UTC-4",
+    "kickoff": "2026-06-30T21:00:00.000Z",
+    "ground": "New York/New Jersey (East Rutherford)",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "Mexico",
+    "away": "Ecuador",
+    "date": "2026-06-30",
+    "time": "19:00 UTC-6",
+    "kickoff": "2026-07-01T01:00:00.000Z",
+    "ground": "Mexico City",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "ENG",
+    "away": "DR Congo",
+    "date": "2026-07-01",
+    "time": "12:00 UTC-4",
+    "kickoff": "2026-07-01T16:00:00.000Z",
+    "ground": "Atlanta",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "BEL",
+    "away": "Senegal",
+    "date": "2026-07-01",
+    "time": "13:00 UTC-7",
+    "kickoff": "2026-07-01T20:00:00.000Z",
+    "ground": "Seattle",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "USA",
+    "away": "Bosnia & Herzegovina",
+    "date": "2026-07-01",
+    "time": "17:00 UTC-7",
+    "kickoff": "2026-07-02T00:00:00.000Z",
+    "ground": "San Francisco Bay Area (Santa Clara)",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "ESP",
+    "away": "AUT",
+    "date": "2026-07-02",
+    "time": "12:00 UTC-7",
+    "kickoff": "2026-07-02T19:00:00.000Z",
+    "ground": "Los Angeles (Inglewood)",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "POR",
+    "away": "CRO",
+    "date": "2026-07-02",
+    "time": "19:00 UTC-4",
+    "kickoff": "2026-07-02T23:00:00.000Z",
+    "ground": "Toronto",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "SUI",
+    "away": "ALG",
+    "date": "2026-07-02",
+    "time": "20:00 UTC-7",
+    "kickoff": "2026-07-03T03:00:00.000Z",
+    "ground": "Vancouver",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "Australia",
+    "away": "EGY",
+    "date": "2026-07-03",
+    "time": "13:00 UTC-5",
+    "kickoff": "2026-07-03T18:00:00.000Z",
+    "ground": "Dallas (Arlington)",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "ARG",
+    "away": "Cape Verde",
+    "date": "2026-07-03",
+    "time": "18:00 UTC-4",
+    "kickoff": "2026-07-03T22:00:00.000Z",
+    "ground": "Miami (Miami Gardens)",
+    "group": null
+  },
+  {
+    "stage": "group",
+    "home": "COL",
+    "away": "Ghana",
+    "date": "2026-07-03",
+    "time": "20:30 UTC-5",
+    "kickoff": "2026-07-04T01:30:00.000Z",
+    "ground": "Kansas City",
     "group": null
   }
 ]
