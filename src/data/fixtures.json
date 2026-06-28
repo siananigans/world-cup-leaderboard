@@ -1,26 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "COL",
-    "away": "POR",
-    "date": "2026-06-27",
-    "time": "19:30 UTC-4",
-    "kickoff": "2026-06-27T23:30:00.000Z",
-    "ground": "Miami (Miami Gardens)",
-    "group": "Group K"
-  },
-  {
-    "stage": "group",
-    "home": "DR Congo",
-    "away": "UZB",
-    "date": "2026-06-27",
-    "time": "19:30 UTC-4",
-    "kickoff": "2026-06-27T23:30:00.000Z",
-    "ground": "Atlanta",
-    "group": "Group K"
-  },
-  {
-    "stage": "group",
     "home": "ALG",
     "away": "AUT",
     "date": "2026-06-27",

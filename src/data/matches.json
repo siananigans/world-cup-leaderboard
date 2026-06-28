@@ -379,6 +379,20 @@
   },
   {
     "stage": "group",
+    "home": "COL",
+    "away": "POR",
+    "homeGoals": 0,
+    "awayGoals": 0
+  },
+  {
+    "stage": "group",
+    "home": "DR Congo",
+    "away": "UZB",
+    "homeGoals": 3,
+    "awayGoals": 1
+  },
+  {
+    "stage": "group",
     "home": "ENG",
     "away": "CRO",
     "homeGoals": 4,
