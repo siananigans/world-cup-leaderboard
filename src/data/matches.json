@@ -446,5 +446,12 @@
     "away": "CAN",
     "homeGoals": 0,
     "awayGoals": 1
+  },
+  {
+    "stage": "group",
+    "home": "BRA",
+    "away": "JPN",
+    "homeGoals": 2,
+    "awayGoals": 1
   }
 ]
