@@ -99,6 +99,7 @@ function isPlaceholder(name) {
 function stageFromRound(round) {
   const r = round.toLowerCase()
   if (r.startsWith('matchday')) return 'group'
+  if (r.includes('round of 32')) return 'round32'
   if (r.includes('round of 16') || r.includes('last 16')) return 'round16'
   if (r.includes('quarter')) return 'quarter'
   if (r.includes('semi')) return 'semi'

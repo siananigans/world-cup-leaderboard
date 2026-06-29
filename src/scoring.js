@@ -9,7 +9,7 @@
 export const SCORING = {
   win: 3,               // your country wins a match
   draw: 1,              // your country draws
-  advanceFromGroup: 5,  // reaches the knockout stage (Round of 16)
+  advanceFromGroup: 5,  // advances past the group stage (reaches Round of 32)
   quarterFinal: 10,     // reaches the quarter-finals
   semiFinal: 10,        // reaches the semi-finals
   champion: 15,         // World Cup winners 🎉
@@ -17,10 +17,11 @@ export const SCORING = {
 }
 
 // Stages from earliest to latest, used to work out how far a team got.
-export const STAGE_ORDER = ['group', 'round16', 'quarter', 'semi', 'final']
+export const STAGE_ORDER = ['group', 'round32', 'round16', 'quarter', 'semi', 'final']
 
 export const STAGE_LABELS = {
   group: 'Group stage',
+  round32: 'Round of 32',
   round16: 'Round of 16',
   quarter: 'Quarter-final',
   semi: 'Semi-final',
@@ -67,7 +68,7 @@ export function scoreTeam(teamCode, matches) {
   const breakdown = {
     fromWins: wins * SCORING.win,
     fromDraws: draws * SCORING.draw,
-    fromAdvance: reached('round16') ? SCORING.advanceFromGroup : 0,
+    fromAdvance: reached('round32') ? SCORING.advanceFromGroup : 0,
     fromQuarter: reached('quarter') ? SCORING.quarterFinal : 0,
     fromSemi: reached('semi') ? SCORING.semiFinal : 0,
     fromChampion: isChampion ? SCORING.champion : 0,
