@@ -31,7 +31,11 @@ export const STAGE_LABELS = {
 const idx = (stage) => STAGE_ORDER.indexOf(stage)
 
 // Compute a points breakdown for a single team from the full match list.
-export function scoreTeam(teamCode, matches) {
+// `fixtures` (optional) lets a scheduled-but-unplayed knockout fixture promote
+// the team's furthest stage — a team in the Round of 32 fixture list has, by
+// definition, advanced from the group stage, so they get the stage bonus even
+// before kickoff.
+export function scoreTeam(teamCode, matches, fixtures = []) {
   let played = 0
   let wins = 0
   let draws = 0
@@ -59,6 +63,11 @@ export function scoreTeam(teamCode, matches) {
 
     if (idx(m.stage) > furthestStageIndex) furthestStageIndex = idx(m.stage)
     if (m.stage === 'final' && gf > ga) isChampion = true
+  }
+
+  for (const f of fixtures) {
+    if (f.home !== teamCode && f.away !== teamCode) continue
+    if (idx(f.stage) > furthestStageIndex) furthestStageIndex = idx(f.stage)
   }
 
   const reached = (stage) => furthestStageIndex >= idx(stage)
@@ -92,12 +101,12 @@ export function scoreTeam(teamCode, matches) {
 }
 
 // Build the full leaderboard: one row per player, sorted by total points.
-export function buildLeaderboard(players, teams, matches) {
+export function buildLeaderboard(players, teams, matches, fixtures = []) {
   const teamByCode = Object.fromEntries(teams.map((t) => [t.code, t]))
 
   const rows = players.map((player) => {
     const teamScores = player.teams.map((code) => ({
-      ...scoreTeam(code, matches),
+      ...scoreTeam(code, matches, fixtures),
       team: teamByCode[code] ?? { code, name: code, flag: '⚽' },
     }))
     const teamPoints = teamScores.reduce((sum, t) => sum + t.points, 0)

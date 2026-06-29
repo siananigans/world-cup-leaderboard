@@ -135,7 +135,7 @@ function App() {
   const [expanded, setExpanded] = useState(null)
 
   const leaderboard = useMemo(
-    () => buildLeaderboard(players, teams, matches),
+    () => buildLeaderboard(players, teams, matches, fixtures),
     [],
   )
 
