@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "GER",
-    "away": "PAR",
-    "date": "2026-06-29",
-    "time": "16:30 UTC-4",
-    "kickoff": "2026-06-29T20:30:00.000Z",
-    "ground": "Boston (Foxborough)",
-    "group": null
-  },
-  {
-    "stage": "group",
     "home": "NED",
     "away": "MAR",
     "date": "2026-06-29",
