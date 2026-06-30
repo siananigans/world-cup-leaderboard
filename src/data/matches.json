@@ -470,6 +470,13 @@
   },
   {
     "stage": "round32",
+    "home": "FRA",
+    "away": "SWE",
+    "homeGoals": 3,
+    "awayGoals": 0
+  },
+  {
+    "stage": "round32",
     "home": "CIV",
     "away": "NOR",
     "homeGoals": 1,
