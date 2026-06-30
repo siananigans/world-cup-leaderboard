@@ -1,16 +1,6 @@
 [
   {
     "stage": "group",
-    "home": "NED",
-    "away": "MAR",
-    "date": "2026-06-29",
-    "time": "19:00 UTC-6",
-    "kickoff": "2026-06-30T01:00:00.000Z",
-    "ground": "Monterrey (Guadalupe)",
-    "group": null
-  },
-  {
-    "stage": "group",
     "home": "CIV",
     "away": "NOR",
     "date": "2026-06-30",
