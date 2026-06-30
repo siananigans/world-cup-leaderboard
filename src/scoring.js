@@ -9,7 +9,7 @@
 export const SCORING = {
   win: 3,               // your country wins a match
   draw: 1,              // your country draws
-  advanceFromGroup: 5,  // reaches the knockout stage (Round of 16)
+  advanceFromGroup: 5,  // advances past the group stage (reaches Round of 32)
   quarterFinal: 10,     // reaches the quarter-finals
   semiFinal: 10,        // reaches the semi-finals
   champion: 15,         // World Cup winners 🎉
@@ -17,10 +17,11 @@ export const SCORING = {
 }
 
 // Stages from earliest to latest, used to work out how far a team got.
-export const STAGE_ORDER = ['group', 'round16', 'quarter', 'semi', 'final']
+export const STAGE_ORDER = ['group', 'round32', 'round16', 'quarter', 'semi', 'final']
 
 export const STAGE_LABELS = {
   group: 'Group stage',
+  round32: 'Round of 32',
   round16: 'Round of 16',
   quarter: 'Quarter-final',
   semi: 'Semi-final',
@@ -30,7 +31,11 @@ export const STAGE_LABELS = {
 const idx = (stage) => STAGE_ORDER.indexOf(stage)
 
 // Compute a points breakdown for a single team from the full match list.
-export function scoreTeam(teamCode, matches) {
+// `fixtures` (optional) lets a scheduled-but-unplayed knockout fixture promote
+// the team's furthest stage — a team in the Round of 32 fixture list has, by
+// definition, advanced from the group stage, so they get the stage bonus even
+// before kickoff.
+export function scoreTeam(teamCode, matches, fixtures = []) {
   let played = 0
   let wins = 0
   let draws = 0
@@ -60,6 +65,11 @@ export function scoreTeam(teamCode, matches) {
     if (m.stage === 'final' && gf > ga) isChampion = true
   }
 
+  for (const f of fixtures) {
+    if (f.home !== teamCode && f.away !== teamCode) continue
+    if (idx(f.stage) > furthestStageIndex) furthestStageIndex = idx(f.stage)
+  }
+
   const reached = (stage) => furthestStageIndex >= idx(stage)
   const furthestStage =
     furthestStageIndex >= 0 ? STAGE_ORDER[furthestStageIndex] : null
@@ -67,7 +77,7 @@ export function scoreTeam(teamCode, matches) {
   const breakdown = {
     fromWins: wins * SCORING.win,
     fromDraws: draws * SCORING.draw,
-    fromAdvance: reached('round16') ? SCORING.advanceFromGroup : 0,
+    fromAdvance: reached('round32') ? SCORING.advanceFromGroup : 0,
     fromQuarter: reached('quarter') ? SCORING.quarterFinal : 0,
     fromSemi: reached('semi') ? SCORING.semiFinal : 0,
     fromChampion: isChampion ? SCORING.champion : 0,
@@ -91,12 +101,12 @@ export function scoreTeam(teamCode, matches) {
 }
 
 // Build the full leaderboard: one row per player, sorted by total points.
-export function buildLeaderboard(players, teams, matches) {
+export function buildLeaderboard(players, teams, matches, fixtures = []) {
   const teamByCode = Object.fromEntries(teams.map((t) => [t.code, t]))
 
   const rows = players.map((player) => {
     const teamScores = player.teams.map((code) => ({
-      ...scoreTeam(code, matches),
+      ...scoreTeam(code, matches, fixtures),
       team: teamByCode[code] ?? { code, name: code, flag: '⚽' },
     }))
     const teamPoints = teamScores.reduce((sum, t) => sum + t.points, 0)
