@@ -1,6 +1,6 @@
 [
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "CIV",
     "away": "NOR",
     "date": "2026-06-30",
@@ -10,7 +10,7 @@
     "group": null
   },
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "FRA",
     "away": "SWE",
     "date": "2026-06-30",
@@ -20,7 +20,7 @@
     "group": null
   },
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "Mexico",
     "away": "Ecuador",
     "date": "2026-06-30",
@@ -30,7 +30,7 @@
     "group": null
   },
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "ENG",
     "away": "DR Congo",
     "date": "2026-07-01",
@@ -40,7 +40,7 @@
     "group": null
   },
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "BEL",
     "away": "Senegal",
     "date": "2026-07-01",
@@ -50,7 +50,7 @@
     "group": null
   },
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "USA",
     "away": "Bosnia & Herzegovina",
     "date": "2026-07-01",
@@ -60,7 +60,7 @@
     "group": null
   },
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "ESP",
     "away": "AUT",
     "date": "2026-07-02",
@@ -70,7 +70,7 @@
     "group": null
   },
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "POR",
     "away": "CRO",
     "date": "2026-07-02",
@@ -80,7 +80,7 @@
     "group": null
   },
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "SUI",
     "away": "ALG",
     "date": "2026-07-02",
@@ -90,7 +90,7 @@
     "group": null
   },
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "Australia",
     "away": "EGY",
     "date": "2026-07-03",
@@ -100,7 +100,7 @@
     "group": null
   },
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "ARG",
     "away": "Cape Verde",
     "date": "2026-07-03",
@@ -110,7 +110,7 @@
     "group": null
   },
   {
-    "stage": "group",
+    "stage": "round32",
     "home": "COL",
     "away": "Ghana",
     "date": "2026-07-03",
