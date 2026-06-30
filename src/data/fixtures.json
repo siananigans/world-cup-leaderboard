@@ -1,16 +1,6 @@
 [
   {
     "stage": "round32",
-    "home": "CIV",
-    "away": "NOR",
-    "date": "2026-06-30",
-    "time": "12:00 UTC-5",
-    "kickoff": "2026-06-30T17:00:00.000Z",
-    "ground": "Dallas (Arlington)",
-    "group": null
-  },
-  {
-    "stage": "round32",
     "home": "FRA",
     "away": "SWE",
     "date": "2026-06-30",

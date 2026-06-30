@@ -467,5 +467,12 @@
     "away": "JPN",
     "homeGoals": 2,
     "awayGoals": 1
+  },
+  {
+    "stage": "round32",
+    "home": "CIV",
+    "away": "NOR",
+    "homeGoals": 1,
+    "awayGoals": 2
   }
 ]
