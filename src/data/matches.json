@@ -481,5 +481,12 @@
     "away": "NOR",
     "homeGoals": 1,
     "awayGoals": 2
+  },
+  {
+    "stage": "round32",
+    "home": "ENG",
+    "away": "DR Congo",
+    "homeGoals": 2,
+    "awayGoals": 1
   }
 ]
