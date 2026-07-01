@@ -488,5 +488,12 @@
     "away": "DR Congo",
     "homeGoals": 2,
     "awayGoals": 1
+  },
+  {
+    "stage": "round32",
+    "home": "BEL",
+    "away": "Senegal",
+    "homeGoals": 3,
+    "awayGoals": 2
   }
 ]
