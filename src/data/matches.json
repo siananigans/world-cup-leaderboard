@@ -495,5 +495,12 @@
     "away": "Senegal",
     "homeGoals": 3,
     "awayGoals": 2
+  },
+  {
+    "stage": "round32",
+    "home": "ESP",
+    "away": "AUT",
+    "homeGoals": 3,
+    "awayGoals": 0
   }
 ]
