@@ -1,16 +1,6 @@
 [
   {
     "stage": "round32",
-    "home": "USA",
-    "away": "Bosnia & Herzegovina",
-    "date": "2026-07-01",
-    "time": "17:00 UTC-7",
-    "kickoff": "2026-07-02T00:00:00.000Z",
-    "ground": "San Francisco Bay Area (Santa Clara)",
-    "group": null
-  },
-  {
-    "stage": "round32",
     "home": "ESP",
     "away": "AUT",
     "date": "2026-07-02",
