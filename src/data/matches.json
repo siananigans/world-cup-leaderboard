@@ -509,5 +509,12 @@
     "away": "AUT",
     "homeGoals": 3,
     "awayGoals": 0
+  },
+  {
+    "stage": "round32",
+    "home": "SUI",
+    "away": "ALG",
+    "homeGoals": 2,
+    "awayGoals": 0
   }
 ]
