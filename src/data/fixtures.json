@@ -1,16 +1,6 @@
 [
   {
     "stage": "round32",
-    "home": "POR",
-    "away": "CRO",
-    "date": "2026-07-02",
-    "time": "19:00 UTC-4",
-    "kickoff": "2026-07-02T23:00:00.000Z",
-    "ground": "Toronto",
-    "group": null
-  },
-  {
-    "stage": "round32",
     "home": "SUI",
     "away": "ALG",
     "date": "2026-07-02",

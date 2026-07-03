@@ -498,6 +498,13 @@
   },
   {
     "stage": "round32",
+    "home": "POR",
+    "away": "CRO",
+    "homeGoals": 2,
+    "awayGoals": 1
+  },
+  {
+    "stage": "round32",
     "home": "ESP",
     "away": "AUT",
     "homeGoals": 3,
