@@ -516,5 +516,12 @@
     "away": "ALG",
     "homeGoals": 2,
     "awayGoals": 0
+  },
+  {
+    "stage": "round32",
+    "home": "Australia",
+    "away": "EGY",
+    "homeGoals": 1,
+    "awayGoals": 1
   }
 ]
