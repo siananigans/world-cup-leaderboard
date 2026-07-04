@@ -58,5 +58,25 @@
     "kickoff": "2026-07-07T00:00:00.000Z",
     "ground": "Seattle",
     "group": null
+  },
+  {
+    "stage": "round16",
+    "home": "ARG",
+    "away": "EGY",
+    "date": "2026-07-07",
+    "time": "12:00 UTC-4",
+    "kickoff": "2026-07-07T16:00:00.000Z",
+    "ground": "Atlanta",
+    "group": null
+  },
+  {
+    "stage": "round16",
+    "home": "SUI",
+    "away": "COL",
+    "date": "2026-07-07",
+    "time": "13:00 UTC-7",
+    "kickoff": "2026-07-07T20:00:00.000Z",
+    "ground": "Vancouver",
+    "group": null
   }
 ]
