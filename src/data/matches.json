@@ -519,6 +519,13 @@
   },
   {
     "stage": "round32",
+    "home": "ARG",
+    "away": "Cape Verde",
+    "homeGoals": 3,
+    "awayGoals": 2
+  },
+  {
+    "stage": "round32",
     "home": "Australia",
     "away": "EGY",
     "homeGoals": 1,
