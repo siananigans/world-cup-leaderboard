@@ -1,16 +1,6 @@
 [
   {
     "stage": "round16",
-    "home": "CAN",
-    "away": "MAR",
-    "date": "2026-07-04",
-    "time": "12:00 UTC-5",
-    "kickoff": "2026-07-04T17:00:00.000Z",
-    "ground": "Houston",
-    "group": null
-  },
-  {
-    "stage": "round16",
     "home": "PAR",
     "away": "FRA",
     "date": "2026-07-04",
