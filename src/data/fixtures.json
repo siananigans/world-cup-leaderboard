@@ -1,15 +1,5 @@
 [
   {
-    "stage": "round32",
-    "home": "COL",
-    "away": "Ghana",
-    "date": "2026-07-03",
-    "time": "20:30 UTC-5",
-    "kickoff": "2026-07-04T01:30:00.000Z",
-    "ground": "Kansas City",
-    "group": null
-  },
-  {
     "stage": "round16",
     "home": "CAN",
     "away": "MAR",

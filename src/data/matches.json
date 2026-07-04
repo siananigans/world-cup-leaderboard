@@ -526,6 +526,13 @@
   },
   {
     "stage": "round32",
+    "home": "COL",
+    "away": "Ghana",
+    "homeGoals": 1,
+    "awayGoals": 0
+  },
+  {
+    "stage": "round32",
     "home": "Australia",
     "away": "EGY",
     "homeGoals": 1,
