@@ -551,5 +551,12 @@
     "away": "MAR",
     "homeGoals": 0,
     "awayGoals": 3
+  },
+  {
+    "stage": "round16",
+    "home": "BRA",
+    "away": "NOR",
+    "homeGoals": 1,
+    "awayGoals": 2
   }
 ]

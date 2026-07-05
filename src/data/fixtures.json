@@ -1,16 +1,6 @@
 [
   {
     "stage": "round16",
-    "home": "BRA",
-    "away": "NOR",
-    "date": "2026-07-05",
-    "time": "16:00 UTC-4",
-    "kickoff": "2026-07-05T20:00:00.000Z",
-    "ground": "New York/New Jersey (East Rutherford)",
-    "group": null
-  },
-  {
-    "stage": "round16",
     "home": "Mexico",
     "away": "ENG",
     "date": "2026-07-05",
