@@ -58,5 +58,15 @@
     "kickoff": "2026-07-07T20:00:00.000Z",
     "ground": "Vancouver",
     "group": null
+  },
+  {
+    "stage": "quarter",
+    "home": "FRA",
+    "away": "MAR",
+    "date": "2026-07-09",
+    "time": "16:00 UTC-4",
+    "kickoff": "2026-07-09T20:00:00.000Z",
+    "ground": "Boston (Foxborough)",
+    "group": null
   }
 ]
