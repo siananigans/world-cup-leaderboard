@@ -1,16 +1,6 @@
 [
   {
     "stage": "round16",
-    "home": "Mexico",
-    "away": "ENG",
-    "date": "2026-07-05",
-    "time": "18:00 UTC-6",
-    "kickoff": "2026-07-06T00:00:00.000Z",
-    "ground": "Mexico City",
-    "group": null
-  },
-  {
-    "stage": "round16",
     "home": "POR",
     "away": "ESP",
     "date": "2026-07-06",
