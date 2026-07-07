@@ -579,5 +579,12 @@
     "away": "BEL",
     "homeGoals": 1,
     "awayGoals": 4
+  },
+  {
+    "stage": "round16",
+    "home": "ARG",
+    "away": "EGY",
+    "homeGoals": 3,
+    "awayGoals": 2
   }
 ]
