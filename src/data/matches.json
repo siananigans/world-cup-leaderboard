@@ -572,5 +572,12 @@
     "away": "ESP",
     "homeGoals": 0,
     "awayGoals": 1
+  },
+  {
+    "stage": "round16",
+    "home": "USA",
+    "away": "BEL",
+    "homeGoals": 1,
+    "awayGoals": 4
   }
 ]
