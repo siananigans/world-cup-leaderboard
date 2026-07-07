@@ -1,15 +1,5 @@
 [
   {
-    "stage": "round16",
-    "home": "SUI",
-    "away": "COL",
-    "date": "2026-07-07",
-    "time": "13:00 UTC-7",
-    "kickoff": "2026-07-07T20:00:00.000Z",
-    "ground": "Vancouver",
-    "group": null
-  },
-  {
     "stage": "quarter",
     "home": "FRA",
     "away": "MAR",
