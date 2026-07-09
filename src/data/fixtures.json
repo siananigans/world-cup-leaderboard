@@ -1,16 +1,6 @@
 [
   {
     "stage": "quarter",
-    "home": "FRA",
-    "away": "MAR",
-    "date": "2026-07-09",
-    "time": "16:00 UTC-4",
-    "kickoff": "2026-07-09T20:00:00.000Z",
-    "ground": "Boston (Foxborough)",
-    "group": null
-  },
-  {
-    "stage": "quarter",
     "home": "ESP",
     "away": "BEL",
     "date": "2026-07-10",

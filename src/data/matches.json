@@ -593,5 +593,12 @@
     "away": "COL",
     "homeGoals": 0,
     "awayGoals": 0
+  },
+  {
+    "stage": "quarter",
+    "home": "FRA",
+    "away": "MAR",
+    "homeGoals": 2,
+    "awayGoals": 0
   }
 ]
