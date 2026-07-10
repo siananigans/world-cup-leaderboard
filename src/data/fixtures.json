@@ -1,16 +1,6 @@
 [
   {
     "stage": "quarter",
-    "home": "ESP",
-    "away": "BEL",
-    "date": "2026-07-10",
-    "time": "12:00 UTC-7",
-    "kickoff": "2026-07-10T19:00:00.000Z",
-    "ground": "Los Angeles (Inglewood)",
-    "group": null
-  },
-  {
-    "stage": "quarter",
     "home": "NOR",
     "away": "ENG",
     "date": "2026-07-11",

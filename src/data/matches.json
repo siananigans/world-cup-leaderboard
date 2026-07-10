@@ -600,5 +600,12 @@
     "away": "MAR",
     "homeGoals": 2,
     "awayGoals": 0
+  },
+  {
+    "stage": "quarter",
+    "home": "ESP",
+    "away": "BEL",
+    "homeGoals": 2,
+    "awayGoals": 1
   }
 ]
