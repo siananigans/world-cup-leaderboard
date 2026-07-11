@@ -18,5 +18,15 @@
     "kickoff": "2026-07-12T01:00:00.000Z",
     "ground": "Kansas City",
     "group": null
+  },
+  {
+    "stage": "semi",
+    "home": "FRA",
+    "away": "ESP",
+    "date": "2026-07-14",
+    "time": "14:00 UTC-5",
+    "kickoff": "2026-07-14T19:00:00.000Z",
+    "ground": "Dallas (Arlington)",
+    "group": null
   }
 ]
