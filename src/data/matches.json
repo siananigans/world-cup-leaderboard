@@ -614,5 +614,12 @@
     "away": "ENG",
     "homeGoals": 1,
     "awayGoals": 2
+  },
+  {
+    "stage": "quarter",
+    "home": "ARG",
+    "away": "SUI",
+    "homeGoals": 3,
+    "awayGoals": 1
   }
 ]

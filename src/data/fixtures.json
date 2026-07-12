@@ -1,15 +1,5 @@
 [
   {
-    "stage": "quarter",
-    "home": "ARG",
-    "away": "SUI",
-    "date": "2026-07-11",
-    "time": "20:00 UTC-5",
-    "kickoff": "2026-07-12T01:00:00.000Z",
-    "ground": "Kansas City",
-    "group": null
-  },
-  {
     "stage": "semi",
     "home": "FRA",
     "away": "ESP",
