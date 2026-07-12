@@ -1,16 +1,6 @@
 [
   {
     "stage": "quarter",
-    "home": "NOR",
-    "away": "ENG",
-    "date": "2026-07-11",
-    "time": "17:00 UTC-4",
-    "kickoff": "2026-07-11T21:00:00.000Z",
-    "ground": "Miami (Miami Gardens)",
-    "group": null
-  },
-  {
-    "stage": "quarter",
     "home": "ARG",
     "away": "SUI",
     "date": "2026-07-11",

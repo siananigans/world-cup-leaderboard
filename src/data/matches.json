@@ -607,5 +607,12 @@
     "away": "BEL",
     "homeGoals": 2,
     "awayGoals": 1
+  },
+  {
+    "stage": "quarter",
+    "home": "NOR",
+    "away": "ENG",
+    "homeGoals": 1,
+    "awayGoals": 2
   }
 ]
