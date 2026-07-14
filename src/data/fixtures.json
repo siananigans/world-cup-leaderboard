@@ -1,16 +1,6 @@
 [
   {
     "stage": "semi",
-    "home": "FRA",
-    "away": "ESP",
-    "date": "2026-07-14",
-    "time": "14:00 UTC-5",
-    "kickoff": "2026-07-14T19:00:00.000Z",
-    "ground": "Dallas (Arlington)",
-    "group": null
-  },
-  {
-    "stage": "semi",
     "home": "ENG",
     "away": "ARG",
     "date": "2026-07-15",

@@ -621,5 +621,12 @@
     "away": "SUI",
     "homeGoals": 3,
     "awayGoals": 1
+  },
+  {
+    "stage": "semi",
+    "home": "FRA",
+    "away": "ESP",
+    "homeGoals": 0,
+    "awayGoals": 2
   }
 ]
