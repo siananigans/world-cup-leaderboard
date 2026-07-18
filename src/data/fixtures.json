@@ -1,15 +1,5 @@
 [
   {
-    "stage": "semi",
-    "home": "FRA",
-    "away": "ENG",
-    "date": "2026-07-18",
-    "time": "17:00 UTC-4",
-    "kickoff": "2026-07-18T21:00:00.000Z",
-    "ground": "Miami (Miami Gardens)",
-    "group": null
-  },
-  {
     "stage": "final",
     "home": "ESP",
     "away": "ARG",
